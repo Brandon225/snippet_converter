@@ -1,0 +1,101 @@
+/*--- COLOR VARIABLES ---*/
+/****** TEXT STYLES ******/
+.text-black {
+  color: #222; }
+
+.text-trueblack {
+  color: #080808; }
+
+.text-red {
+  color: #D85360; }
+
+.text-green {
+  color: #85B861; }
+
+.text-blue {
+  color: #51b6c3; }
+
+.text-yellow {
+  color: #C6884F; }
+
+.text-ltgrey {
+  color: #9d9d9d; }
+
+.title {
+  font-size: 2em;
+  font-family: 'Archivo Black', sans-serif; }
+
+/****** BODY ******/
+body {
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+  color: #85B861;
+  background-color: #222; }
+  body hr {
+    border-color: #9d9d9d; }
+
+/****** NAVBAR STYLES ******/
+.navbar .navbar-right a {
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear; }
+
+.navbar .navbar-right a:hover {
+  color: #C6884F !important;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear; }
+
+.navbar li.active a {
+  color: #C6884F !important; }
+
+.navbar .navbar-brand.active a {
+  color: #D85360; }
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .navbar .navbar-brand::before {
+    content: url(../img/logo.svg);
+    margin-right: 8px; }
+  .navbar .navbar-brand:hover::before {
+    content: url(../img/logo_high.svg); }
+
+.navbar .navbar-brand.active {
+  color: #D85360;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear; }
+  .navbar .navbar-brand.active::before {
+    content: url(../img/logo_high.svg); }
+  .navbar .navbar-brand.active:hover {
+    color: #9d9d9d !important;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear; }
+    .navbar .navbar-brand.active:hover::before {
+      content: url(../img/logo.svg); }
+
+/****** CONTENT STYLES ******/
+.page-container {
+  margin-top: 60px; }
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  background-color: #2f2f2f;
+  border-color: #080808; }
+
+.btn-success {
+  min-width: 100%; }
+
+.scope-select {
+  display: none; }
