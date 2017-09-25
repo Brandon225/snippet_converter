@@ -143,6 +143,77 @@ body
 
 }
 
+/****** FOOTER STYLES ******/
+// footer a
+// {
+//     color: $ltgrey;
+//     -webkit-transition: all 200ms linear;
+//     -moz-transition: all 200ms linear;
+//     -o-transition: all 200ms linear;
+//     -ms-transition: all 200ms linear;
+//     transition: all 200ms linear;
+// }
+// footer a:hover
+// {
+//     color: $yellow!important;
+//     text-decoration: none;
+//     -webkit-transition: all 200ms linear;
+//     -moz-transition: all 200ms linear;
+//     -o-transition: all 200ms linear;
+//     -ms-transition: all 200ms linear;
+//     transition: all 200ms linear;
+// }
+
+footer:hover
+{
+    a
+    {
+        color: $yellow;
+        text-decoration: none;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+
+    hr
+    {
+        border-color: $yellow!important;
+        text-decoration: none;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+}
+
+footer
+{
+    a
+    {
+        color: $ltgrey;
+        text-decoration: none;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+
+    hr
+    {
+        border-color: $ltgrey;
+        text-decoration: none;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+}
+
 /****** CONTENT STYLES ******/
 .page-container
 {
