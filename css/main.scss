@@ -104,6 +104,13 @@ body
         //     margin-right: 8px;
         // }
 
+        color: $ltgrey;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+
         &::before
         {
             content: url(../img/logo.svg);
@@ -112,6 +119,13 @@ body
 
         &:hover
         {
+            color: $red!important;
+            -webkit-transition: all 200ms linear;
+            -moz-transition: all 200ms linear;
+            -o-transition: all 200ms linear;
+            -ms-transition: all 200ms linear;
+            transition: all 200ms linear;
+
             &::before
             {
                 content: url(../img/logo_high.svg);
@@ -120,7 +134,6 @@ body
     }
     .navbar-brand.active
     {
-
         color: $red;
         -webkit-transition: all 200ms linear;
         -moz-transition: all 200ms linear;
@@ -248,6 +261,7 @@ textarea
 
 #details-container
 {
+    padding-top: 80px;
     h2
     {
         min-height: 50vh;
