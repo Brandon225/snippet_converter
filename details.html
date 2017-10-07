@@ -3,7 +3,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -45,15 +44,52 @@
         </div>
     </nav>
 
-    <body>
-        <div class="container">
-            <h1>Details</h1>
+    <body data-spy="scroll" data-target="#sidebar">
+        <div id="details-container" class="container">
+            <!-- <h1>Details</h1> -->
             <div class="row">
-                <div class='col-xs-12'>
+                <div id="details-content" class="col-md-10">
+                    <div id="atom">
+                        <h2>Atom</h2>
+                    </div>
 
+                    <div id="brackets">
+                        <h2>Brackets</h2>
+                    </div>
+
+                    <div id="sublime">
+                        <h2>Sublime Text</h2>
+                    </div>
+
+                    <div id="viscode">
+                        <h2>Visual Studio Code</h2>
+                    </div>
+                </div>
+
+                <div id="sidebar" class="col-md-2 hidden-xs">
+                    <ul class="nav nav-pills nav-stacked affix">
+                        <li id="nav-atom"><a href="#atom" data-scroll>Atom</a></li>
+                        <li id="nav-brackets"><a href="#brackets" data-scroll>Brackets</a></li>
+                        <li id="nav-sublime"><a href="#sublime" data-scroll>Sublime Text</a></li>
+                        <li id="nav-viscode"><a href="#viscode" data-scroll>Visual Studio Code</a></li>
+                    </ul>
                 </div>
             </div>
+
+            <footer>
+                <hr>
+                <a href="http://reimagin8d.com" target="_blank">&copy; reimagin8d 2017</a>
+            </footer>
+
         </div>
     </body>
 
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#sidebar', offset:80});
+    </script>
 </html>

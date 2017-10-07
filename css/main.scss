@@ -13,6 +13,7 @@ $ltgrey: #9d9d9d;
 {
     color: $black;
 }
+
 .text-trueblack
 {
     color: $trublack;
@@ -97,6 +98,19 @@ body
         align-items: center;
         justify-content: center;
 
+        // img
+        // {
+        //     max-height: 100%;
+        //     margin-right: 8px;
+        // }
+
+        color: $ltgrey;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+
         &::before
         {
             content: url(../img/logo.svg);
@@ -105,6 +119,13 @@ body
 
         &:hover
         {
+            color: $red!important;
+            -webkit-transition: all 200ms linear;
+            -moz-transition: all 200ms linear;
+            -o-transition: all 200ms linear;
+            -ms-transition: all 200ms linear;
+            transition: all 200ms linear;
+
             &::before
             {
                 content: url(../img/logo_high.svg);
@@ -113,7 +134,6 @@ body
     }
     .navbar-brand.active
     {
-
         color: $red;
         -webkit-transition: all 200ms linear;
         -moz-transition: all 200ms linear;
@@ -237,4 +257,43 @@ textarea
 .scope-select
 {
     display: none;
+}
+
+#details-container
+{
+    padding-top: 80px;
+
+    h2
+    {
+        min-height: 50vh;
+        color: white;
+    }
+}
+
+.nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
+{
+    background: $trublack;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.nav-pills>li.active>a
+{
+    background-color: $trublack;
+    color: $blue!important;
+    border-radius: 0;
+}
+
+.nav-pills>li>a
+{
+    color: $ltgrey;
+    border-radius: 0;
+    &:hover
+    {
+        color: $blue;
+        background-color: rgba(0,0,0,0);
+    }
 }
