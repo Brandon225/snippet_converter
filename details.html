@@ -50,33 +50,41 @@
             <h1>Details</h1>
             <div class="row">
                 <div class='col-md-9'>
-                    <div class="atom">
+                    <div id="atom">
                         <h2>Atom</h2>
                     </div>
 
-                    <div class="brackets">
+                    <div id="brackets">
                         <h2>Brackets</h2>
                     </div>
 
-                    <div class="sublime">
+                    <div id="sublime">
                         <h2>Sublime Text</h2>
                     </div>
 
-                    <div class="viscode">
+                    <div id="viscode">
                         <h2>Visual Studio Code</h2>
                     </div>
                 </div>
 
-                <div class='col-md-3'>
-                    <ul id="sidebar" class="nav nav-pills nav-stacked">
-                        <li id="nav-atom"><a href="#atom">Atom</a></li>
-                        <li id="nav-brackets"><a href="#brackets">Brackets</a></li>
-                        <li id="nav-sublime"><a href="#sublime">Sublime Text</a></li>
-                        <li id="nav-viscode"><a href="#viscode">Visual Studio Code</a></li>
+                <div id="sidebar" class='col-md-3'>
+                    <ul class="nav nav-pills nav-stacked affix">
+                        <li id="nav-atom"><a href="#atom" data-scroll>Atom</a></li>
+                        <li id="nav-brackets"><a href="#brackets" data-scroll>Brackets</a></li>
+                        <li id="nav-sublime"><a href="#sublime" data-scroll>Sublime Text</a></li>
+                        <li id="nav-viscode"><a href="#viscode" data-scroll>Visual Studio Code</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </body>
 
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#sidebar', offset:80});
+    </script>
 </html>
