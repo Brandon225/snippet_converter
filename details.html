@@ -45,12 +45,35 @@
         </div>
     </nav>
 
-    <body>
-        <div class="container">
+    <body data-spy="scroll" data-target="#sidebar">
+        <div id="details-container" class="container">
             <h1>Details</h1>
             <div class="row">
-                <div class='col-xs-12'>
+                <div class='col-md-9'>
+                    <div class="atom">
+                        <h2>Atom</h2>
+                    </div>
 
+                    <div class="brackets">
+                        <h2>Brackets</h2>
+                    </div>
+
+                    <div class="sublime">
+                        <h2>Sublime Text</h2>
+                    </div>
+
+                    <div class="viscode">
+                        <h2>Visual Studio Code</h2>
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <ul id="sidebar" class="nav nav-pills nav-stacked">
+                        <li id="nav-atom"><a href="#atom">Atom</a></li>
+                        <li id="nav-brackets"><a href="#brackets">Brackets</a></li>
+                        <li id="nav-sublime"><a href="#sublime">Sublime Text</a></li>
+                        <li id="nav-viscode"><a href="#viscode">Visual Studio Code</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

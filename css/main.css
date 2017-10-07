@@ -136,3 +136,10 @@ textarea {
 
 .scope-select {
   display: none; }
+
+#details-container h2 {
+  min-height: 50vh;
+  color: white; }
+
+#details-container li a {
+  color: #9d9d9d; }
