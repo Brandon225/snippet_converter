@@ -6,10 +6,25 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home - Snippets</title>
-        <meta name="description" content="">
+        <title>Home | Snippets</title>
+        <meta name="description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!--FaceBook-->
+        <meta property="og:url" content="http://snip.local:8888"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Home | Snippets"/>
+        <meta property="og:image" content="http://snip.local:8888/img/logo.png"/>
+        <meta property="og:site_name" content="Snippets"/>
+        <meta property="og:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!"/>
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@reimagind8d" />
+        <meta name="twitter:title" content="Home | Snippets" />
+        <meta name="twitter:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!" />
+        <meta name="twitter:image" content="http://snip.local:8888/img/logo.png" />
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
@@ -142,21 +157,23 @@
                             </div>
 
                             <!-- Allow user to select To text editor -->
-                            <div class="form-group">
-                                <textarea name="convert_from_text" rows="20"><snippet>
-                                	<content><![CDATA[
-                                console.log('$1: ', $2);
-                                ]]></content>
-                                	<tabTrigger>log</tabTrigger>
-                                	<scope>source.js</scope>
-                                	<description>Log to the Console</description>
-                                </snippet></textarea>
+                            <div id="from-fg" class="form-group">
+                                <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1"><snippet>
+	<content><![CDATA[
+console.log('$1: ', $2);
+]]></content>
+	<tabTrigger>log</tabTrigger>
+	<scope>source.js</scope>
+	<description>Log to the Console</description>
+</snippet></textarea>
+                            <span id="helpBlock1" class="help-block">Invalid format for selected editor.</span>
+
                             </div>
                         </div>
 
                         <div class='col-sm-6'>
                             <!-- Allow user to select To text editor -->
-                            <div class="form-group">
+                            <div id="from-fg" class="form-group">
                                 <label for="convert_to" class="text-blue title">TO</label>
                                 <select id="convert-to" class="form-control" name="convert_to" required>
                                     <option value=""></option>
@@ -181,15 +198,38 @@
                 </div>
             </div>
 
-            <div class="row share-overlay">
-
-            </div>
             <footer>
                 <hr>
                 <a href="http://reimagin8d.com" target="_blank">&copy; reimagin8d 2017</a>
             </footer>
         </div> <!-- /container -->
 
+        <div class="share-overlay">
+            <div class="container page-container">
+                <div class="row">
+                    <div class='col-sm-4'>
+                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+                    </div>
+                    <div class='col-sm-4'>
+                        <a class="twitter-share-button"
+                        href="https://twitter.com/intent/tweet?text=Convert%20your%20code%20editor%20snippets%20with%20Snippets%20by%20reimagin8d"
+                        target="_blank"
+                        data-size="large">
+                      Tweet</a>
+                    </div>
+
+                    <div class='col-sm-4'>
+                        <a href="#">Pintrest</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class='col-xs-12' style="margin-top: 15px">
+                        <a class="dismiss-share btn btn-success" href="#">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
 
@@ -197,6 +237,28 @@
 
         <script src="js/main.js"></script>
 
+        <script>
+            // Share Overlay Dismiss
+            $('.dismiss-share').on('click', function(e)
+            {
+                e.preventDefault();
 
+                console.log('Dismiss share clicked!');
+
+                $('.share-overlay').toggle();
+                $('body').removeClass('modal-open');
+
+            });
+        </script>
+
+        <!-- Facebook share button script -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=228144774384276";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     </body>
 </html>

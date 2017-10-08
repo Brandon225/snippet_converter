@@ -65,6 +65,8 @@ body
 /****** NAVBAR STYLES ******/
 .navbar
 {
+    z-index: 1;
+
     .navbar-right a
     {
         -webkit-transition: all 200ms linear;
@@ -259,6 +261,23 @@ textarea
     display: none;
 }
 
+/****** HOME PAGE STYLES ******/
+.share-overlay
+{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+}
+
+/****** DETAILS PAGE STYLES ******/
 #details-container
 {
     padding-top: 80px;
