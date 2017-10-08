@@ -251,6 +251,20 @@ textarea
     border-color: $trublack;
 }
 
+.form-group.has-error
+{
+    textarea
+    {
+        border-color: $red;
+    }
+}
+
+
+.error-block
+{
+    display: none;
+}
+
 .btn-success
 {
     min-width: 100%;
