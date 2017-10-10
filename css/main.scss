@@ -50,6 +50,24 @@ $ltgrey: #9d9d9d;
     font-family: 'Archivo Black', sans-serif;
 }
 
+a
+{
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+
+    &:hover
+    {
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+}
+
 /****** BODY ******/
 body
 {
@@ -69,21 +87,21 @@ body
 
     .navbar-right a
     {
-        -webkit-transition: all 200ms linear;
-        -moz-transition: all 200ms linear;
-        -o-transition: all 200ms linear;
-        -ms-transition: all 200ms linear;
-        transition: all 200ms linear;
+        // -webkit-transition: all 200ms linear;
+        // -moz-transition: all 200ms linear;
+        // -o-transition: all 200ms linear;
+        // -ms-transition: all 200ms linear;
+        // transition: all 200ms linear;
     }
     .navbar-right a:hover
     {
         color: $yellow!important;
 
-        -webkit-transition: all 200ms linear;
-        -moz-transition: all 200ms linear;
-        -o-transition: all 200ms linear;
-        -ms-transition: all 200ms linear;
-        transition: all 200ms linear;
+        // -webkit-transition: all 200ms linear;
+        // -moz-transition: all 200ms linear;
+        // -o-transition: all 200ms linear;
+        // -ms-transition: all 200ms linear;
+        // transition: all 200ms linear;
     }
 
     li.active a
@@ -137,11 +155,11 @@ body
     .navbar-brand.active
     {
         color: $red;
-        -webkit-transition: all 200ms linear;
-        -moz-transition: all 200ms linear;
-        -o-transition: all 200ms linear;
-        -ms-transition: all 200ms linear;
-        transition: all 200ms linear;
+        // -webkit-transition: all 200ms linear;
+        // -moz-transition: all 200ms linear;
+        // -o-transition: all 200ms linear;
+        // -ms-transition: all 200ms linear;
+        // transition: all 200ms linear;
         &::before
         {
             content: url(../img/logo_high.svg);
@@ -151,11 +169,11 @@ body
         &:hover
         {
             color: $ltgrey!important;
-            -webkit-transition: all 200ms linear;
-            -moz-transition: all 200ms linear;
-            -o-transition: all 200ms linear;
-            -ms-transition: all 200ms linear;
-            transition: all 200ms linear;
+            // -webkit-transition: all 200ms linear;
+            // -moz-transition: all 200ms linear;
+            // -o-transition: all 200ms linear;
+            // -ms-transition: all 200ms linear;
+            // transition: all 200ms linear;
             &::before
             {
                 content: url(../img/logo.svg);
@@ -192,11 +210,11 @@ footer:hover
     {
         color: $yellow;
         text-decoration: none;
-        -webkit-transition: all 200ms linear;
-        -moz-transition: all 200ms linear;
-        -o-transition: all 200ms linear;
-        -ms-transition: all 200ms linear;
-        transition: all 200ms linear;
+        // -webkit-transition: all 200ms linear;
+        // -moz-transition: all 200ms linear;
+        // -o-transition: all 200ms linear;
+        // -ms-transition: all 200ms linear;
+        // transition: all 200ms linear;
     }
 
     hr
@@ -217,11 +235,11 @@ footer
     {
         color: $ltgrey;
         text-decoration: none;
-        -webkit-transition: all 200ms linear;
-        -moz-transition: all 200ms linear;
-        -o-transition: all 200ms linear;
-        -ms-transition: all 200ms linear;
-        transition: all 200ms linear;
+        // -webkit-transition: all 200ms linear;
+        // -moz-transition: all 200ms linear;
+        // -o-transition: all 200ms linear;
+        // -ms-transition: all 200ms linear;
+        // transition: all 200ms linear;
     }
 
     hr
