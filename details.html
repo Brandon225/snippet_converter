@@ -28,9 +28,11 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
-            body {
+            body
+            {
                 padding-top: 50px;
                 padding-bottom: 20px;
+                background-color: white;
             }
         </style>
         <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -64,26 +66,64 @@
             <!-- <h1>Details</h1> -->
             <div class="row">
                 <div id="details-content" class="col-md-10">
-                    <div id="atom">
+                    <div id="atom" class="details-section">
                         <h2>Atom</h2>
+                        <p>Atom snippets should be formatted using CoffeeScript.</p>
+                        <p>There is a text file in your ~/.atom directory called snippets.cson that contains all your custom snippets that are loaded when you launch Atom. You can also easily open up that file by selecting the Atom > Snippets menu.</p>
+                        <p class="text-ltgrey">Example</p>
+                        <pre class="text-green">'.source.js':
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:"crash"});$2'</pre>
+                        <a href="http://flight-manual.atom.io/using-atom/sections/snippets/" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Atom snippets.</a>
                     </div>
 
-                    <div id="brackets">
+                    <div id="brackets" class="details-section">
                         <h2>Brackets</h2>
+                        <p>In Brackets each .json file corresponds to a set of snippets. You can use whatever names you would like, but it makes sense to follow Jonathan’s lead and name your files based on the category of snippet used. If you open up one of the files you can see it is a JSON-structured array of objects.</p>
+                        <p class="text-ltgrey">Example</p>
+                        <pre class="text-green">[{"name":"Log to the Console","trigger":"log","usage":"source.js","description":"Log to the Console","template":"\nconsole.log('$1: ', $2);\n"}]</pre>
+                        <a href="http://blog.brackets.io/2012/12/19/snippets-brackets-extension/?lang=en" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Brackets snippets.</a>
                     </div>
 
-                    <div id="sublime">
+                    <div id="sublime" class="details-section">
                         <h2>Sublime Text</h2>
+                        <p>To create a new snippet, select Tools | New Snippet…. Sublime Text will present you with an skeleton for a new snippet.</p>
+                        <p>Snippets can be stored under any package’s folder, but to keep it simple while you’re learning, you can save them to your Packages/User folder.</p>
+                        <p class="text-ltgrey">Example</p>
+                        <pre class="text-green"><snippet>
+<content><![CDATA[
+console.log('$1: ', $2);
+]]></content>
+<tabTrigger>log</tabTrigger>
+<scope>source.js</scope>
+<description>Log to the Console</description>
+</snippet></pre>
+                        <a href="http://sublimetext.info/docs/en/extensibility/snippets.html" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Sublime Text snippets.</a>
                     </div>
 
-                    <div id="viscode">
+                    <div id="viscode" class="details-section">
                         <h2>Visual Studio Code</h2>
+                        <p>You can define your own snippets for specific languages. To open up a snippet file for editing, open User Snippets under File > Preferences (Code > Preferences on Mac) and select the language for which the snippets should appear.</p>
+                        <p>Snippets are defined in a JSON format and stored in a per user (languageId).json file. For example, Markdown snippets go in a markdown.json file.</p>
+                        <p class="text-ltgrey">Example</p>
+                        <pre class="text-green">{"For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+            "\tvar ${3:element} = ${2:array}[${1:index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop"
+    }}</pre>
+                        <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Visual Studio Code snippets.</a>
                     </div>
                 </div>
 
                 <div id="sidebar" class="col-md-2 hidden-xs">
                     <ul class="nav nav-pills nav-stacked affix">
-                        <li id="nav-atom"><a href="#atom" data-scroll>Atom</a></li>
+                        <li id="nav-atom" class="active"><a href="#atom" data-scroll>Atom</a></li>
                         <li id="nav-brackets"><a href="#brackets" data-scroll>Brackets</a></li>
                         <li id="nav-sublime"><a href="#sublime" data-scroll>Sublime Text</a></li>
                         <li id="nav-viscode"><a href="#viscode" data-scroll>Visual Studio Code</a></li>

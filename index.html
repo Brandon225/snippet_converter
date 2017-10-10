@@ -31,6 +31,7 @@
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
+                background-color: #222;
             }
         </style>
         <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -75,7 +76,7 @@
                         <div class='col-sm-6'>
                             <!-- Allow user to select From text editor -->
                             <div class="form-group">
-                                <label for="convert_from" class="title">FROM</label>
+                                <label for="convert_from" class="title text-green">FROM</label>
                                 <select id="convert-from" class="form-control" name="convert_from" required>
                                     <option value=""></option>
                                     <option value="atom">Atom</option>
@@ -158,7 +159,7 @@
 
                             <!-- Allow user to select To text editor -->
                             <div id="from-fg" class="form-group">
-                                <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1"><snippet>
+                                <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1" class="text-green"><snippet>
 	<content><![CDATA[
 console.log('$1: ', $2);
 ]]></content>

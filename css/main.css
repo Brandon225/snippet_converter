@@ -21,15 +21,18 @@
 .text-ltgrey {
   color: #9d9d9d; }
 
-.title {
-  font-size: 2em;
-  font-family: 'Archivo Black', sans-serif; }
-
 .hover-ltgrey:hover {
   color: #9d9d9d !important; }
 
 .hover-red:hover {
   color: #D85360 !important; }
+
+.back-ltgrey {
+  background-color: #9d9d9d; }
+
+.title {
+  font-size: 2em;
+  font-family: 'Archivo Black', sans-serif; }
 
 a {
   -webkit-transition: all 200ms linear;
@@ -47,9 +50,7 @@ a {
 
 /****** BODY ******/
 body {
-  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
-  color: #85B861;
-  background-color: #222; }
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier; }
   body hr {
     border-color: #9d9d9d; }
 
@@ -157,8 +158,9 @@ textarea {
 #details-container {
   padding-top: 80px; }
   #details-container h2 {
-    min-height: 50vh;
-    color: white; }
+    color: #080808; }
+  #details-container .details-section {
+    margin-bottom: 60px; }
 
 .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   background: #080808;

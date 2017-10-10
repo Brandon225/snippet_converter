@@ -44,13 +44,6 @@ $ltgrey: #9d9d9d;
     color: $ltgrey;
 }
 
-
-.title
-{
-    font-size: 2em;
-    font-family: 'Archivo Black', sans-serif;
-}
-
 .hover-ltgrey
 {
     &:hover
@@ -65,6 +58,17 @@ $ltgrey: #9d9d9d;
     {
         color: $red!important;
     }
+}
+
+.back-ltgrey
+{
+    background-color: $ltgrey;
+}
+
+.title
+{
+    font-size: 2em;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 a
@@ -90,8 +94,8 @@ a
 body
 {
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
-    color: $green;
-    background-color: $black;
+    // color: $green;
+    // background-color: $black;
     hr
     {
         border-color: $ltgrey;
@@ -334,8 +338,13 @@ textarea
 
     h2
     {
-        min-height: 50vh;
-        color: white;
+        // min-height: 50vh;
+        color: $trublack;
+    }
+
+    .details-section
+    {
+        margin-bottom: 60px;
     }
 }
 
