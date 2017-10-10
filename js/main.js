@@ -15,6 +15,9 @@ $('#convert-from').on('change', function()
     // then disable selected option
     $toOpt.attr('disabled', true);
 
+    // reset select value of to input
+    $to.val('');
+
     if (selected === 'visual_code')
     {
         $('.scope-select').show();
