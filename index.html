@@ -78,9 +78,9 @@
                                 <label for="convert_from" class="title">FROM</label>
                                 <select id="convert-from" class="form-control" name="convert_from" required>
                                     <option value=""></option>
-                                    <option value="sublime">Sublime Text</option>
                                     <option value="atom">Atom</option>
                                     <option value="brackets">Brackets</option>
+                                    <option value="sublime">Sublime Text</option>
                                     <option value="visual_code">Visual Studio Code</option>
                                 </select>
                             </div>
@@ -166,7 +166,7 @@ console.log('$1: ', $2);
 	<scope>source.js</scope>
 	<description>Log to the Console</description>
 </snippet></textarea>
-                            <span id="helpBlock1" class="help-block">Invalid format for selected editor.</span>
+                            <span class="error-block text-danger">Invalid format for selected editor. <a href="details.html" target="_">For more info on formatting.</a></span>
 
                             </div>
                         </div>
@@ -177,9 +177,9 @@ console.log('$1: ', $2);
                                 <label for="convert_to" class="text-blue title">TO</label>
                                 <select id="convert-to" class="form-control" name="convert_to" required>
                                     <option value=""></option>
-                                    <option value="sublime">Sublime Text</option>
                                     <option value="atom">Atom</option>
                                     <option value="brackets">Brackets</option>
+                                    <option value="sublime">Sublime Text</option>
                                     <option value="visual_code">Visual Studio Code</option>
                                 </select>
                             </div>
