@@ -31,6 +31,7 @@
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
+                background-color: #222;
             }
         </style>
         <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -64,9 +65,9 @@
         </nav>
 
 
-        <div class="container page-container">
+        <div id="home-container" class="container page-container">
 
-            <div class="row" style="min-height: 100vh;">
+            <div class="row">
                 <div class='col-xs-12'>
                     <!-- FORM -->
                     <form id="converter-form" class="form" action="#" method="post">
@@ -75,7 +76,7 @@
                         <div class='col-sm-6'>
                             <!-- Allow user to select From text editor -->
                             <div class="form-group">
-                                <label for="convert_from" class="title">FROM</label>
+                                <label for="convert_from" class="title text-green">FROM</label>
                                 <select id="convert-from" class="form-control" name="convert_from" required>
                                     <option value=""></option>
                                     <option value="atom">Atom</option>
@@ -158,7 +159,7 @@
 
                             <!-- Allow user to select To text editor -->
                             <div id="from-fg" class="form-group">
-                                <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1"><snippet>
+                                <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1" class="text-green"><snippet>
 	<content><![CDATA[
 console.log('$1: ', $2);
 ]]></content>
@@ -232,10 +233,9 @@ console.log('$1: ', $2);
         </div>
 
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
+        <script src="js/vendor/retina.js"></script>
 
         <script>
             // Share Overlay Dismiss
