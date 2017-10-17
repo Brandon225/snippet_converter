@@ -53,6 +53,8 @@ body {
   font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier; }
   body hr {
     border-color: #9d9d9d; }
+  body h1 {
+    color: #9d9d9d; }
 
 /****** NAVBAR STYLES ******/
 .navbar {
@@ -144,6 +146,9 @@ textarea {
   display: none; }
 
 /****** HOME PAGE STYLES ******/
+#home-container .row:first-of-type {
+  min-height: 100vh; }
+
 .share-overlay {
   display: none;
   position: absolute;
@@ -155,12 +160,11 @@ textarea {
   background-color: rgba(0, 0, 0, 0.9); }
 
 /****** DETAILS PAGE STYLES ******/
-#details-container {
-  padding-top: 80px; }
-  #details-container h2 {
-    color: #080808; }
-  #details-container .details-section {
-    margin-bottom: 60px; }
+#details-container h2 {
+  color: #080808; }
+
+#details-container .details-section {
+  margin-bottom: 60px; }
 
 .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   background: #080808;
@@ -181,3 +185,10 @@ textarea {
   .nav-pills > li > a:hover {
     color: #51b6c3;
     background-color: transparent; }
+
+/****** ABOUT PAGE STYLES ******/
+#about-container p {
+  color: #51b6c3; }
+
+#about-container .row:first-of-type {
+  min-height: 100vh; }

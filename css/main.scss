@@ -100,6 +100,10 @@ body
     {
         border-color: $ltgrey;
     }
+    h1
+    {
+        color: $ltgrey;
+    }
 }
 
 /****** NAVBAR STYLES ******/
@@ -316,6 +320,13 @@ textarea
 }
 
 /****** HOME PAGE STYLES ******/
+#home-container
+{
+    .row:first-of-type
+    {
+        min-height: 100vh;
+    }
+}
 .share-overlay
 {
     display: none;
@@ -328,17 +339,15 @@ textarea
     z-index: 2;
 
     background-color: rgba(0, 0, 0, 0.9);
-
 }
 
 /****** DETAILS PAGE STYLES ******/
 #details-container
 {
-    padding-top: 80px;
+    // padding-top: 80px;
 
     h2
     {
-        // min-height: 50vh;
         color: $trublack;
     }
 
@@ -374,4 +383,20 @@ textarea
         color: $blue;
         background-color: rgba(0,0,0,0);
     }
+}
+
+/****** ABOUT PAGE STYLES ******/
+#about-container
+{
+
+    p
+    {
+        color: $blue;
+    }
+
+    .row:first-of-type
+    {
+        min-height: 100vh;
+    }
+
 }
