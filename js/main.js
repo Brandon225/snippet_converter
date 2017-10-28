@@ -2,12 +2,12 @@ $('#convert-from').on('change', function()
 {
     var selected = $(this).val();
 
-    //console.log('selected? ', selected);
+    console.log('selected? ', selected);
 
     var $to = $('#convert-to');
     var $toOpt = $('#convert-to option[value="' + selected + '"]');
 
-    //console.log('toOpt? ', $toOpt);
+    console.log('toOpt? ', $toOpt);
 
     // first enable all options
     $to.children().attr('disabled', false);
@@ -29,7 +29,9 @@ $('#convert-from').on('change', function()
     }
 });
 
-$('#converter-form').submit(function(event)
+// $('#converter-form').submit(function(event)
+// {
+$('#submit-btn').click(function(event)
 {
 
     //console.log('Submit button clicked!');

@@ -139,16 +139,10 @@ textarea {
 .error-block {
   display: none; }
 
-.btn-success {
-  min-width: 100%; }
-
 .scope-select {
   display: none; }
 
 /****** HOME PAGE STYLES ******/
-#home-container .row:first-of-type {
-  min-height: 100vh; }
-
 .share-overlay {
   display: none;
   position: absolute;
