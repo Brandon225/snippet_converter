@@ -43,31 +43,26 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark back-black fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Snippets</a>
+            <a class="navbar-brand active order-1" href="index.html">Snippets</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav-collapse">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="details.html">Details</a>
+                    <a class="nav-item nav-link" href="about.html">About</a>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right" role="form">
-                    <li class="active"><a href="details.html">Details</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </div><!--/.navbar-collapse -->
         </div>
     </nav>
 
-    <body data-spy="scroll" data-target="#sidebar">
+    <body data-spy="scroll" data-target="#sidebar-content">
         <div id="details-container" class="container page-container">
             <h1>Details</h1>
             <div class="row">
-                <div id="details-content" class="col-md-10">
+                <div id="details-content" class="col-md-8">
                     <div id="atom" class="details-section">
                         <h2>Atom</h2>
                         <p>Atom snippets should be formatted using CoffeeScript.</p>
@@ -123,12 +118,12 @@ console.log('$1: ', $2);
                     </div>
                 </div>
 
-                <div id="sidebar" class="col-md-2 hidden-xs">
-                    <ul class="nav nav-pills nav-stacked affix">
-                        <li id="nav-atom" class="active"><a href="#atom" data-scroll>Atom</a></li>
-                        <li id="nav-brackets"><a href="#brackets" data-scroll>Brackets</a></li>
-                        <li id="nav-sublime"><a href="#sublime" data-scroll>Sublime Text</a></li>
-                        <li id="nav-viscode"><a href="#viscode" data-scroll>Visual Studio Code</a></li>
+                <div id="sidebar" class="col d-none d-sm-block">
+                    <ul id="sidebar-content" class="nav flex-column sticky-top">
+                        <li id="nav-atom" class="nav-item"><a class="nav-link active" href="#atom" data-scroll>Atom</a></li>
+                        <li id="nav-brackets" class="nav-item"><a class="nav-link" href="#brackets" data-scroll>Brackets</a></li>
+                        <li id="nav-sublime" class="nav-item"><a class="nav-link" href="#sublime" data-scroll>Sublime Text</a></li>
+                        <li id="nav-viscode" class="nav-item"><a class="nav-link" href="#viscode" data-scroll>Visual Studio Code</a></li>
                     </ul>
                 </div>
             </div>

@@ -65,6 +65,11 @@ $ltgrey: #9d9d9d;
     background-color: $ltgrey;
 }
 
+.back-black
+{
+    background-color: $black;
+}
+
 .title
 {
     font-size: 2em;
@@ -257,6 +262,7 @@ footer:hover
 
 footer
 {
+    margin-top: 60px;
     a
     {
         color: $ltgrey;
@@ -357,7 +363,12 @@ textarea
     }
 }
 
-.nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
+.sticky-top
+{
+    top: 140px;
+}
+
+.flex-column .active:focus, .flex-column .active:hover
 {
     background: $trublack;
     -webkit-transition: all 200ms linear;
@@ -367,14 +378,14 @@ textarea
     transition: all 200ms linear;
 }
 
-.nav-pills>li.active>a
+.flex-column .active
 {
     background-color: $trublack;
     color: $blue!important;
     border-radius: 0;
 }
 
-.nav-pills>li>a
+.flex-column a
 {
     color: $ltgrey;
     border-radius: 0;

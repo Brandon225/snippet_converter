@@ -471,7 +471,7 @@ $('[type="submit"]').mouseenter(function()
 
 
 /*Smooth link animation*/
-$('a[href*=#]:not([href=#])').click(function() {
+$('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
         var target = $(this.hash);
