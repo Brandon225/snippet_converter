@@ -29,6 +29,8 @@ $('#convert-from').on('change', function()
     }
 });
 
+
+
 // $('#converter-form').submit(function(event)
 // {
 $('#submit-btn').click(function(event)
