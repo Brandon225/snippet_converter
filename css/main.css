@@ -33,6 +33,9 @@
 .back-black {
   background-color: #222; }
 
+.format {
+  display: none; }
+
 .title {
   font-size: 2em;
   font-family: 'Archivo Black', sans-serif; }

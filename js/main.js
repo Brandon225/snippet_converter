@@ -15,6 +15,9 @@ $('#convert-from').on('change', function()
     // then disable selected option
     $toOpt.attr('disabled', true);
 
+    // hide all formats
+    $('.format').hide();
+
     // reset select value of to input
     $to.val('');
 
@@ -24,10 +27,15 @@ $('#convert-from').on('change', function()
         $('select[name=scope_from]').attr('required', true);
 
     } else {
+
         $('.scope-select').hide();
         $('select[name=scope_from]').attr('required', false);
+
+        $('#format-' + selected).show();
     }
 });
+
+
 
 
 
