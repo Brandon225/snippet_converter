@@ -121,23 +121,9 @@ body
 {
     z-index: 1;
 
-    .navbar-right a
-    {
-        // -webkit-transition: all 200ms linear;
-        // -moz-transition: all 200ms linear;
-        // -o-transition: all 200ms linear;
-        // -ms-transition: all 200ms linear;
-        // transition: all 200ms linear;
-    }
     .navbar-right a:hover
     {
         color: $yellow!important;
-
-        // -webkit-transition: all 200ms linear;
-        // -moz-transition: all 200ms linear;
-        // -o-transition: all 200ms linear;
-        // -ms-transition: all 200ms linear;
-        // transition: all 200ms linear;
     }
 
     li.active a
@@ -191,11 +177,6 @@ body
     .navbar-brand.active
     {
         color: $red;
-        // -webkit-transition: all 200ms linear;
-        // -moz-transition: all 200ms linear;
-        // -o-transition: all 200ms linear;
-        // -ms-transition: all 200ms linear;
-        // transition: all 200ms linear;
         &::before
         {
             content: url(../img/logo_high.svg);
@@ -205,11 +186,6 @@ body
         &:hover
         {
             color: $ltgrey!important;
-            // -webkit-transition: all 200ms linear;
-            // -moz-transition: all 200ms linear;
-            // -o-transition: all 200ms linear;
-            // -ms-transition: all 200ms linear;
-            // transition: all 200ms linear;
             &::before
             {
                 content: url(../img/logo.svg);
