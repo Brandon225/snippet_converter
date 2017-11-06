@@ -36,13 +36,10 @@ $('#convert-from').on('change', function()
 });
 
 
-
-
-
-// $('#converter-form').submit(function(event)
-// {
-$('#submit-btn').click(function(event)
+$('#converter-form').submit(function(event)
 {
+// $('#submit-btn').click(function(event)
+// {
 
     //console.log('Submit button clicked!');
 
@@ -90,7 +87,7 @@ $('#submit-btn').click(function(event)
             }
         } else {
             error = true;
-            toggleInputError('#from-fg', true);
+            toggleInputError('#from-fg', true, 'atom');
         }
 
     }
@@ -128,7 +125,7 @@ $('#submit-btn').click(function(event)
             }
         } else {
             error = true;
-            toggleInputError('#from-fg', true);
+            toggleInputError('#from-fg', true, 'sublime');
         }
 
 
@@ -136,17 +133,6 @@ $('#submit-btn').click(function(event)
 
     if (from === 'visual_code')
     {
-        /*"For Loop": {
-            "prefix": "for",
-            "body": [
-                "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
-                "\tvar ${3:element} = ${2:array}[${1:index}];",
-                "\t$0",
-                "}"
-            ],
-            "description": "For Loop"
-        },*/
-
         var $json = parseVisualCode(snipText);
         if ($json)
         {
@@ -192,7 +178,7 @@ $('#submit-btn').click(function(event)
 
         } else {
             error = true;
-            toggleInputError('#from-fg', true);
+            toggleInputError('#from-fg', true, 'viscode');
         }
     }
 
@@ -230,7 +216,7 @@ $('#submit-btn').click(function(event)
 
         } else {
             error = true;
-            toggleInputError('#from-fg', true);
+            toggleInputError('#from-fg', true, 'brackets');
         }
 
     }
@@ -458,12 +444,16 @@ function parseSublime(snipText)
     }
 }
 
-function toggleInputError(input, show)
+function toggleInputError(input, show, type)
 {
-    console.log('toggleInputError: '+ input + ' show? ' + show);
+    console.log('toggleInputError: '+ input + ' show? ' + show + ' type? ' + type);
 
     if (show)
     {
+        if (type)
+        {
+            $('#error-link').prop('href', 'details.html#' + type);
+        }
         $(input).addClass('has-error');
         $(input).find('.error-block').css('display', 'block');
 
@@ -481,16 +471,22 @@ $('[type="submit"]').mouseenter(function()
 
 
 /*Smooth link animation*/
-$('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-            $('html,body').animate({
-                scrollTop: target.offset().top - 80
-            }, 1000);
-            return false;
-        }
+$('a[href*="#"]:not([href="#"])').click(function()
+{
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname)
+    {
+        smoothScroll(this.hash);
     }
 });
+
+function smoothScroll(id)
+{
+    var target = $(id);
+    target = target.length ? target : $('[name=' + id.slice(1) + ']');
+    if (target.length) {
+        $('html,body').animate({
+            scrollTop: target.offset().top - 80
+        }, 1000);
+        return false;
+    }
+}

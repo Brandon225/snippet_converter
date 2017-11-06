@@ -85,7 +85,7 @@
                     <div id="brackets" class="card mb-5">
                         <div class="card-body">
                             <h2 class="card-title">Brackets</h2>
-                            <p class="card-subtitle mb-2 text-muted">This is formatting information for the Brackets <a class="text-yellow hover-ltgrey"href="https://github.com/jrowny/brackets-snippets">Snippets</a> extension.</p>
+                            <p class="card-subtitle mb-2 text-muted">This is formatting information for the Brackets <a class="text-yellow hover-ltgrey"href="https://github.com/jrowny/brackets-snippets" target="_blank">Snippets</a> extension.</p>
                             <p class="card-text">In Brackets each .json file corresponds to a set of snippets. You can use whatever names you would like, but it makes sense to follow Jonathan’s lead and name your files based on the category of snippet used. If you open up one of the files you can see it is a JSON-structured array of objects.</p>
 
                             <div class="card mb-3">
@@ -184,5 +184,15 @@
         /*Scroll Spy*/
         $('body').scrollspy({ target: '#sidebar', offset:80});
 
+        $(document).ready(function()
+        {
+            var hash = window.location.hash;
+
+            if (hash)
+            {
+                smoothScroll(hash);
+            }
+            console.log('hash? ', hash);
+        });
     </script>
 </html>

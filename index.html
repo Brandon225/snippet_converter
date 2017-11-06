@@ -63,7 +63,7 @@
 
         <div id="home-container" class="container page-container">
 
-            <div class="row">
+            <form id="converter-form" class="row">
 
                 <div class="col-sm">
                     <!-- Allow user to select From text editor -->
@@ -160,31 +160,7 @@ console.log('$1: ', $2);
 	<scope>source.js</scope>
 	<description>Log to the Console</description>
 </snippet></textarea>
-                    <span class="error-block text-red">Invalid format for selected editor. <a class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span>
-
-                    <span id="format-atom" class="format">
-                        <p class="text-ltgrey">Example Format</p>
-                        <pre class="text-green">'.source.js':
-    'console.log':
-    'prefix': 'log'
-    'body': 'console.log(${1:"crash"});$2'</pre>
-                    </span>
-
-                    <span id="format-atom" class="format">
-                        <p class="text-ltgrey">Format Example</p>
-                        <pre class="text-green">{"For Loop": {
-        "prefix": "for",
-        "body": [
-            "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
-            "\tvar ${3:element} = ${2:array}[${1:index}];",
-            "\t$0",
-            "}"
-        ],
-        "description": "For Loop"
-    }}</pre>
-                    </span>
-
-                    </div>
+                    <span class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span></div>
                 </div>
 
                 <div class='col-sm'>
@@ -210,7 +186,7 @@ console.log('$1: ', $2);
                     <!-- Submit button -->
                     <button id="submit-btn" type="submit" class="btn btn-success btn-block">Submit</button>
                 </div>
-            </div>
+            </form>
 
 
         </div> <!-- /container -->
@@ -260,26 +236,26 @@ console.log('$1: ', $2);
 
         <script>
             // Share Overlay Dismiss
-            $('.dismiss-share').on('click', function(e)
-            {
-                e.preventDefault();
-
-                console.log('Dismiss share clicked!');
-
-                $('.share-overlay').toggle();
-                $('body').removeClass('modal-open');
-
-            });
+            // $('.dismiss-share').on('click', function(e)
+            // {
+            //     e.preventDefault();
+            //
+            //     console.log('Dismiss share clicked!');
+            //
+            //     $('.share-overlay').toggle();
+            //     $('body').removeClass('modal-open');
+            //
+            // });
         </script>
 
         <!-- Facebook share button script -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
+        <!-- <div id="fb-root"></div> -->
+        <!-- <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=228144774384276";
           fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));</script> -->
     </body>
 </html>
