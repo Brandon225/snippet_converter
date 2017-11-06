@@ -60,43 +60,42 @@
 
     <body data-spy="scroll" data-target="#sidebar-content">
         <div id="details-container" class="container page-container">
-            <h1>Details</h1>
+            <!-- <h1>Details</h1> -->
             <div class="row">
                 <div id="details-content" class="col-md-8">
-                    <div id="atom" class="details-section">
-                        <h2>Atom</h2>
-                        <p>Atom snippets should be formatted using CoffeeScript.</p>
-                        <p>There is a text file in your ~/.atom directory called snippets.cson that contains all your custom snippets that are loaded when you launch Atom. You can also easily open up that file by selecting the Atom > Snippets menu.</p>
-                        <p class="text-ltgrey">Example</p>
-                        <pre class="text-green">'.source.js':
-  'console.log':
-    'prefix': 'log'
-    'body': 'console.log(${1:"crash"});$2'</pre>
-                        <a href="http://flight-manual.atom.io/using-atom/sections/snippets/" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Atom snippets.</a>
+                    <div id="atom" class="card details-section">
+                        <div class="card-body">
+                            <h2 class="card-title">Atom</h2>
+                            <p class="card-subtitle mb-2 text-muted">Atom snippets should be formatted using CoffeeScript.</p>
+                            <p>There is a text file in your ~/.atom directory called snippets.cson that contains all your custom snippets that are loaded when you launch Atom. You can also easily open up that file by selecting the Atom > Snippets menu.</p>
+                            <p class="text-ltgrey">Example</p>
+                            <pre class="text-green">'.source.js':
+      'console.log':
+        'prefix': 'log'
+        'body': 'console.log(${1:"crash"});$2'</pre>
+                            <a href="http://flight-manual.atom.io/using-atom/sections/snippets/" target="_blank" class="btn btn-primary">more info</a>
+                        </div>
                     </div>
 
-                    <div id="brackets" class="details-section">
-                        <h2>Brackets</h2>
-                        <p>In Brackets each .json file corresponds to a set of snippets. You can use whatever names you would like, but it makes sense to follow Jonathan’s lead and name your files based on the category of snippet used. If you open up one of the files you can see it is a JSON-structured array of objects.</p>
-                        <p class="text-ltgrey">Example</p>
-                        <pre class="text-green">[{"name":"Log to the Console","trigger":"log","usage":"source.js","description":"Log to the Console","template":"\nconsole.log('$1: ', $2);\n"}]</pre>
-                        <a href="http://blog.brackets.io/2012/12/19/snippets-brackets-extension/?lang=en" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Brackets snippets.</a>
+                    <div id="brackets" class="card details-section">
+                        <div class="card-body">
+                            <h2 class="card-title">Brackets</h2>
+                            <p class="card-subtitle mb-2 text-muted">In Brackets each .json file corresponds to a set of snippets. You can use whatever names you would like, but it makes sense to follow Jonathan’s lead and name your files based on the category of snippet used. If you open up one of the files you can see it is a JSON-structured array of objects.</p>
+                            <p class="text-ltgrey">Example</p>
+                            <pre class="text-green">[{"name":"Log to the Console","trigger":"log","usage":"source.js","description":"Log to the Console","template":"\nconsole.log('$1: ', $2);\n"}]</pre>
+                            <a href="http://blog.brackets.io/2012/12/19/snippets-brackets-extension/?lang=en" target="_blank" class="btn btn-primary">more info</a>
+                        </div>
                     </div>
 
-                    <div id="sublime" class="details-section">
-                        <h2>Sublime Text</h2>
-                        <p>To create a new snippet, select Tools | New Snippet…. Sublime Text will present you with an skeleton for a new snippet.</p>
-                        <p>Snippets can be stored under any package’s folder, but to keep it simple while you’re learning, you can save them to your Packages/User folder.</p>
-                        <p class="text-ltgrey">Example</p>
-                        <pre class="text-green"><snippet>
-<content><![CDATA[
-console.log('$1: ', $2);
-]]></content>
-<tabTrigger>log</tabTrigger>
-<scope>source.js</scope>
-<description>Log to the Console</description>
-</snippet></pre>
-                        <a href="http://sublimetext.info/docs/en/extensibility/snippets.html" target="_blank" class="text-yellow hover-ltgrey">For more information on formatting Sublime Text snippets.</a>
+                    <div id="sublime" class="card details-section">
+                        <div class="card-body">
+                            <h2>Sublime Text</h2>
+                            <p>To create a new snippet, select Tools | New Snippet…. Sublime Text will present you with an skeleton for a new snippet.</p>
+                            <p>Snippets can be stored under any package’s folder, but to keep it simple while you’re learning, you can save them to your Packages/User folder.</p>
+                            <p class="text-ltgrey">Example</p>
+                            <pre class="text-green"><code id="sublime-snip"></code></pre>
+                            <a href="http://sublimetext.info/docs/en/extensibility/snippets.html" target="_blank" class="btn btn-primary">more info</a>
+                        </div>
                     </div>
 
                     <div id="viscode" class="details-section">
@@ -145,7 +144,13 @@ console.log('$1: ', $2);
     <script src="js/vendor/retina.js"></script>
 
     <script>
-    /*Scroll Spy*/
-    $('body').scrollspy({ target: '#sidebar', offset:80});
+        /*Scroll Spy*/
+        $('body').scrollspy({ target: '#sidebar', offset:80});
+
+        $(document).ready(function()
+        {
+            $('#sublime-snip').html("<snippet><content><![CDATA[console.log('$1: ', $2);]]></content><tabTrigger>log</tabTrigger><scope>source.js</scope><description>Log to the Console</description></snippet>");
+        });
+
     </script>
 </html>
