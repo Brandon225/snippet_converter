@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form-group scope-select">
-                        <label for="scope_from">Scope/Source</label>
+                        <label class="text-white" for="scope_from">Scope/Source</label>
                         <select class="form-control" name="scope_from">
                             <option value=""></option>
                             <option value="source.actionscript.2">ActionScript: source.actionscript.2</option>
@@ -151,7 +151,8 @@
 
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
-                        <textarea name="convert_from_text" rows="20" aria-describedby="helpBlock1" class="text-green"><snippet>
+
+                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="helpBlock1" class="text-green"><snippet>
 	<content><![CDATA[
 console.log('$1: ', $2);
 ]]></content>
@@ -160,6 +161,28 @@ console.log('$1: ', $2);
 	<description>Log to the Console</description>
 </snippet></textarea>
                     <span class="error-block text-red">Invalid format for selected editor. <a class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span>
+
+                    <span id="format-atom" class="format">
+                        <p class="text-ltgrey">Example Format</p>
+                        <pre class="text-green">'.source.js':
+    'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:"crash"});$2'</pre>
+                    </span>
+
+                    <span id="format-atom" class="format">
+                        <p class="text-ltgrey">Format Example</p>
+                        <pre class="text-green">{"For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+            "\tvar ${3:element} = ${2:array}[${1:index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop"
+    }}</pre>
+                    </span>
 
                     </div>
                 </div>
