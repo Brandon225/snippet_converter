@@ -93,7 +93,12 @@
                             <p>To create a new snippet, select Tools | New Snippet…. Sublime Text will present you with an skeleton for a new snippet.</p>
                             <p>Snippets can be stored under any package’s folder, but to keep it simple while you’re learning, you can save them to your Packages/User folder.</p>
                             <p class="text-ltgrey">Example</p>
-                            <pre class="text-green"><code id="sublime-snip"></code></pre>
+                            <pre class="text-green"><code>&lt;snippet&gt;
+    &lt;content&gt;&lt;![CDATA[console.log('$1: ', $2);]]&gt;&lt;/content&gt;
+    &lt;tabTrigger&gt;log&lt;/tabTrigger&gt;
+    &lt;scope&gt;source.js&lt;/scope&gt;
+    &lt;description&gt;Log to the Console&lt;/description&gt;
+&lt;/snippet&gt;</code></pre>
                             <a href="http://sublimetext.info/docs/en/extensibility/snippets.html" target="_blank" class="btn btn-primary">more info</a>
                         </div>
                     </div>
@@ -146,11 +151,6 @@
     <script>
         /*Scroll Spy*/
         $('body').scrollspy({ target: '#sidebar', offset:80});
-
-        $(document).ready(function()
-        {
-            $('#sublime-snip').html("<snippet><content><![CDATA[console.log('$1: ', $2);]]></content><tabTrigger>log</tabTrigger><scope>source.js</scope><description>Log to the Console</description></snippet>");
-        });
 
     </script>
 </html>
