@@ -38,11 +38,6 @@ $('#convert-from').on('change', function()
 
 $('#converter-form').submit(function(event)
 {
-// $('#submit-btn').click(function(event)
-// {
-
-    //console.log('Submit button clicked!');
-
     event.preventDefault();
 
     // hide error's if needed
@@ -221,11 +216,12 @@ $('#converter-form').submit(function(event)
 
     }
 
-    if (!error)
-    {
-        $('.share-overlay').toggle();
-        $('body').addClass('modal-open');
-    }
+    // Uncomment if using Share overlay!!!!
+    // if (!error)
+    // {
+    //     $('.share-overlay').toggle();
+    //     $('body').addClass('modal-open');
+    // }
 });
 
 function populateToText(text)
