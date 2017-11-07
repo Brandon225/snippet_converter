@@ -327,12 +327,14 @@ function parseAtom(snipText)
 {
     console.log('parseAtom snipText first char? ', snipText.charAt(0));
 
-    if (snipText.charAt(0) === "\"")
+    var firstChar = snipText.charAt(0);
+    if (firstChar === "\"" || firstChar === "\'")
     {
-        console.log('firstChar is quotation! ', snipText);
+        console.log('firstChar is quotation! ', firstChar);
         var snipObj = new Object();
-        snipText = snipText.replace(/"/g, "").replace(/'/, "");
+        snipText = snipText.replace(/"/g, "").replace(/'/g, "");
         snipText = $.trim(snipText);
+        console.log('SnipText? ', snipText);
         var snippet = snipText.split('\n');
         for (var i = 0; i < snippet.length; i++)
         {
@@ -341,7 +343,7 @@ function parseAtom(snipText)
             if (row.startsWith('prefix'))
             {
                 var value = $.trim(row.replace('prefix:', ''));
-                //console.log('value: ', value);
+                console.log('prefix: ', value);
 
                 var updatedRow = $.trim(row.replace(value, ''));
 
@@ -356,6 +358,7 @@ function parseAtom(snipText)
                     for (var idx = 3; idx < snippet.length; idx++)
                     {
                         var contentRow = snippet[idx];
+                        console.log('contentRow? ' + contentRow + ' idx? ' + idx);
                         if (idx === 3)
                         {
                             content += $.trim(contentRow.replace('body:', '')) + '\n';
@@ -365,6 +368,8 @@ function parseAtom(snipText)
                     }
 
                     snipObj.content = content;
+
+                    console.log('snipObj content? ' + content + ' i? ' + i);
                 } else {
 
                     var value = $.trim(row);
