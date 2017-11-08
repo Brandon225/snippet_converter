@@ -89,5 +89,4 @@ You can define your own snippets for specific languages. To open up a snippet fi
 	}
 }
 ```
-
-[more info](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+<a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets" target="_blank" class="btn btn-primary">more info</a>
