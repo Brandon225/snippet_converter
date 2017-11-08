@@ -36,25 +36,19 @@ There is a text file in your ~/.atom directory called snippets.cson that contain
 
 In Brackets each .json file corresponds to a set of snippets. You can use whatever names you would like, but it makes sense to follow Jonathan’s lead and name your files based on the category of snippet used. If you open up one of the files you can see it is a JSON-structured array of objects.
 
->**Example**
+**Example**
 
->```[
+```[
+{
+              "name":"Log to the Console",
+                    "trigger":"log",
+                    "usage":"source.js",
+                    "description":"Log to the Console",
+                    "template":"\nconsole.log('$1: ', $2);\n"
 
-> {
+}
 
->               "name":"Log to the Console",
-
->               "trigger":"log",
-
->               "usage":"source.js",
-
->               "description":"Log to the Console",
-
->               "template":"\nconsole.log('$1: ', $2);\n"
-
->}
-
->]```
+]```
 
 [more info](http://blog.brackets.io/2012/12/19/snippets-brackets-extension/?lang=en)
 
