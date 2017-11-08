@@ -6,7 +6,7 @@ This app allows developers to easily migrate their snippets when moving to a new
 
 ----------
 
-**Table of Contents**
+### Table of Contents
 
 - [Snippets - A text editor snippet converter](#)
 	- [Formatting](#)
