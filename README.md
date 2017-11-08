@@ -69,7 +69,7 @@ Snippets can be stored under any package’s folder, but to keep it simple while
 	<description>Log to the Console</description>
 </snippet>
 ```
-[more info](http://sublimetext.info/docs/en/extensibility/snippets.html)
+[more info](http://docs.sublimetext.info/en/latest/extensibility/snippets.html?highlight=Snippets)
 
 ### Visual Studio Code<a name="vis-code"></a>
 *Snippets are defined in a JSON format and stored in a per user (languageId).json file. For example, Markdown snippets go in a markdown.json file.*
