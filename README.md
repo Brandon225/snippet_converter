@@ -39,13 +39,21 @@ In Brackets each .json file corresponds to a set of snippets. You can use whatev
 >**Example**
 
 >```[```
+
 > ```{```
+
 >&nbsp;&nbsp;&nbsp;&nbsp;```"name":"Log to the Console",```
+
 >&nbsp;&nbsp;&nbsp;&nbsp;```"trigger":"log",```
+
 >&nbsp;&nbsp;&nbsp;&nbsp;```"usage":"source.js",```
+
 >&nbsp;&nbsp;&nbsp;&nbsp;```"description":"Log to the Console",```
+
 >&nbsp;&nbsp;&nbsp;&nbsp;```"template":"\nconsole.log('$1: ', $2);\n"```
+
 >```}```
+
 >```]```
 
 [more info](http://blog.brackets.io/2012/12/19/snippets-brackets-extension/?lang=en)
