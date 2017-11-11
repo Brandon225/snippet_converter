@@ -68,17 +68,17 @@ $('#converter-form').submit(function(event)
         {
             if (to === 'sublime')
             {
-                populateToText(createSublime(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
+                populateToText('textarea[name=convert_to_text]', createSublime(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
             }
 
             if (to === 'brackets')
             {
-                populateToText(createBrackets(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
+                populateToText('textarea[name=convert_to_text]', createBrackets(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
             }
 
             if (to === 'visual_code')
             {
-                populateToText(createVisualCode(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
+                populateToText('textarea[name=convert_to_text]', createVisualCode(snipObj.content, snipObj.trigger, snipObj.scope, snipObj.description));
             }
         } else {
             error = true;
@@ -103,7 +103,7 @@ $('#converter-form').submit(function(event)
             // Convert the parsed data into Atom's format
             if (to === 'atom')
             {
-                populateToText(createAtom($content.text(), $trigger.text(), $scope.text(), $description.text()));
+                populateToText('textarea[name=convert_to_text]', createAtom($content.text(), $trigger.text(), $scope.text(), $description.text()));
             }
 
             // Convert the parsed data into Bracket's format
@@ -111,12 +111,12 @@ $('#converter-form').submit(function(event)
             {
                 //console.log('To brackets!');
 
-                populateToText(createBrackets($content.text(), $trigger.text(), $scope.text(), $description.text()));
+                populateToText('textarea[name=convert_to_text]', createBrackets($content.text(), $trigger.text(), $scope.text(), $description.text()));
             }
 
             if (to === 'visual_code')
             {
-                populateToText(createVisualCode($content.text(), $trigger.text(), $scope.text(), $description.text()));
+                populateToText('textarea[name=convert_to_text]', createVisualCode($content.text(), $trigger.text(), $scope.text(), $description.text()));
             }
         } else {
             error = true;
@@ -158,17 +158,17 @@ $('#converter-form').submit(function(event)
 
             if (to === 'sublime')
             {
-                populateToText(createSublime(contentVC, triggerVC, scopeVC, descriptionVC));
+                populateToText('textarea[name=convert_to_text]', createSublime(contentVC, triggerVC, scopeVC, descriptionVC));
             }
 
             if (to === 'atom')
             {
-                populateToText(createAtom(contentVC, triggerVC, scopeVC, descriptionVC));
+                populateToText('textarea[name=convert_to_text]', createAtom(contentVC, triggerVC, scopeVC, descriptionVC));
             }
 
             if (to === 'brackets')
             {
-                populateToText(createBrackets(contentVC, triggerVC, scopeVC, descriptionVC));
+                populateToText('textarea[name=convert_to_text]', createBrackets(contentVC, triggerVC, scopeVC, descriptionVC));
             }
 
         } else {
@@ -196,17 +196,17 @@ $('#converter-form').submit(function(event)
 
             if (to === 'sublime')
             {
-                populateToText(createSublime(content, trigger, scope, description));
+                populateToText('textarea[name=convert_to_text]', createSublime(content, trigger, scope, description));
             }
 
             if (to === 'atom')
             {
-                populateToText(createAtom(content, trigger, scope, description));
+                populateToText('textarea[name=convert_to_text]', createAtom(content, trigger, scope, description));
             }
 
             if (to === 'visual_code')
             {
-                populateToText(createVisualCode(content, trigger, scope, description));
+                populateToText('textarea[name=convert_to_text]', createVisualCode(content, trigger, scope, description));
             }
 
         } else {
@@ -224,9 +224,9 @@ $('#converter-form').submit(function(event)
     // }
 });
 
-function populateToText(text)
+function populateToText(element, text)
 {
-    $('textarea[name=convert_to_text]').val(text);
+    $(element).val(text);
 }
 
 function createAtom(content, trigger, scope, description)
