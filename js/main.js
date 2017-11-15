@@ -327,27 +327,41 @@ function parseAtom(snipText)
 {
     console.log('parseAtom snipText first char? ', snipText.charAt(0));
 
+    // atom idx 0,1,2,4 are keys
     var firstChar = snipText.charAt(0);
+
+    // var lnFirst = snipText.split('\n');
+    // var splitFirst = lnFirst[1].split(':');
+
+    // console.log('splitFirst? ', splitFirst);
+    // console.log('splitFirst length? ', splitFirst.length);
+
     if (firstChar === "\"" || firstChar === "\'")
     {
         console.log('firstChar is quotation! ', firstChar);
         var snipObj = new Object();
-        snipText = snipText.replace(/"/g, "").replace(/'/g, "");
+        // snipText = snipText.replace(/"/g, "").replace(/'/g, "");
         snipText = $.trim(snipText);
         console.log('SnipText? ', snipText);
         var snippet = snipText.split('\n');
+        console.log('snippet? ', snippet);
         for (var i = 0; i < snippet.length; i++)
         {
             var row = $.trim(snippet[i]);
 
-            if (row.startsWith('prefix'))
+            if (row.startsWith('"prefix"'))
             {
-                var value = $.trim(row.replace('prefix:', ''));
+                console.log('prefix row');
+                // var value = $.trim(row.replace('"prefix:"', ''));
+                var value = row.split(':');
+
                 console.log('prefix: ', value);
 
-                var updatedRow = $.trim(row.replace(value, ''));
+                // var updatedRow = $.trim(row.replace(value[1], ''));
 
-                snipObj.trigger = value;
+                snipObj.trigger = removeQuotes($.trim(value[1]));
+
+                console.log('snipObj trigger? ' + snipObj.trigger + ' i? ' + i);
 
             } else if (i === snippet.length-1)
             {
@@ -358,37 +372,55 @@ function parseAtom(snipText)
                     for (var idx = 3; idx < snippet.length; idx++)
                     {
                         var contentRow = snippet[idx];
+
                         console.log('contentRow? ' + contentRow + ' idx? ' + idx);
                         if (idx === 3)
                         {
-                            content += $.trim(contentRow.replace('body:', '')) + '\n';
+                            contentRow = contentRow.split(':');
+
+                            console.log('contentRow: ', contentRow[1]);
+
+                            // var updatedRow = $.trim(row.replace(value[1], ''));
+
+                            content += $.trim(removeTripleQuotes(contentRow[1]));
+
                         } else {
-                            content += contentRow + '\n';
+
+                            content += '\n' + removeTripleQuotes(contentRow);
                         }
                     }
 
                     snipObj.content = content;
 
-                    console.log('snipObj content? ' + content + ' i? ' + i);
+                    console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
                 } else {
 
-                    var value = $.trim(row);
-                    snipObj.content = value;
+                    var value = $.trim(row).split(':');
+
+                    snipObj.content = $.trim(removeTripleQuotes(value[1]));
+
+                    console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
+
                 }
 
             } else if (i === 1) {
 
+                console.log('index is 1!');
                 var value = $.trim(row.replace(':', ''));
 
-                snipObj.description = value;
+                snipObj.description = removeQuotes(value);
+                console.log('snipObj description? ' + snipObj.description + ' i? ' + i);
 
 
             } else if (i === 0)
             {
 
+                console.log('index is 2!');
+
                 var value = $.trim(row.replace(':', ''));
 
-                snipObj.scope = value.replace('.','');
+                snipObj.scope = removeQuotes(value.replace('.',''));
+                console.log('snipObj scope? ' + snipObj.scope + ' i? ' + i);
 
             }
         }
@@ -400,6 +432,15 @@ function parseAtom(snipText)
 
 }
 
+function removeQuotes(text)
+{
+    return text.replace(/"/g, "").replace(/'/g, "");
+}
+
+function removeTripleQuotes(text)
+{
+    return text.replace('\"\"\"', '').replace('\"\"\"', '');
+}
 function parseBrackets(snipText)
 {
     var json = '';

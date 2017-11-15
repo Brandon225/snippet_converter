@@ -63,10 +63,10 @@
 
         <div class="container page-container text-center">
             <div class="btn-group mx-auto" data-toggle="buttons">
-                <label class="btn btn-primary btn-yellow">
+                <label class="btn btn-primary btn-brblue">
                     <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off"> Conversion
                 </label>
-                <label id="migration-btn" class="btn btn-primary btn-yellow active">
+                <label id="migration-btn" class="btn btn-primary btn-brblue active">
                     <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off" checked> Migration
                 </label>
             </div>
@@ -109,7 +109,7 @@
                             <option value="source.dot">GraphViz: source.dot</option>
                             <option value="source.groovy">Groovy: source.groovy</option>
                             <option value="source.haskell">Haskell: source.haskell</option>
-                            <option value="text.html(.basic)">HTML: text.html(.basic)</option>
+                            <option value="text.html">HTML: text.html</option>
                             <option value="text.html.jsp">JSP: text.html.jsp</option>
                             <option value="source.java">Java: source.java</option>
                             <option value="source.java-props">Java Properties: source.java-props</option>
@@ -204,9 +204,9 @@
                         <label for="convert_from" class="title text-green">FROM</label>
                         <select id="convert-from" class="form-control custom-select" name="convert_from" required>
                             <option value=""></option>
-                            <option value="atom">Atom</option>
+                            <option value="atom" selected>Atom</option>
                             <option value="brackets">Brackets</option>
-                            <option value="sublime" selected>Sublime Text</option>
+                            <option value="sublime">Sublime Text</option>
                             <option value="visual_code">Visual Studio Code</option>
                         </select>
                     </div>
@@ -231,7 +231,7 @@
                             <option value="source.dot">GraphViz: source.dot</option>
                             <option value="source.groovy">Groovy: source.groovy</option>
                             <option value="source.haskell">Haskell: source.haskell</option>
-                            <option value="text.html(.basic)">HTML: text.html(.basic)</option>
+                            <option value="text.html">HTML: text.html</option>
                             <option value="text.html.jsp">JSP: text.html.jsp</option>
                             <option value="source.java">Java: source.java</option>
                             <option value="source.java-props">Java Properties: source.java-props</option>
@@ -286,26 +286,22 @@
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
 
-                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green"><snippet>
-	<content><![CDATA[
-console.log('$1: ', $2);
-]]></content>
-	<tabTrigger>log</tabTrigger>
-	<scope>source.js</scope>
-	<description>Log to the Console</description>
-</snippet></textarea>
+                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green">".text.html":
+   "A bootstrap button":
+       "prefix": "btn"
+       "body": """<button type="submit" class="btn btn-success btn-block">Convert</button>""" </textarea>
                     <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span></div>
                 </div>
 
                 <div class='col-sm'>
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
-                        <label for="convert_to" class="text-blue title">TO</label>
+                        <label for="convert_to" class="text-yellow title">TO</label>
                         <select id="convert-to" class="form-control custom-select" name="convert_to" required>
                             <option value=""></option>
-                            <option value="atom">Atom</option>
+                            <option value="atom" disabled>Atom</option>
                             <option value="brackets">Brackets</option>
-                            <option value="sublime" disabled>Sublime Text</option>
+                            <option value="sublime">Sublime Text</option>
                             <option value="visual_code">Visual Studio Code</option>
                         </select>
                     </div>
@@ -368,58 +364,58 @@ console.log('$1: ', $2);
         <script src="js/vendor/retina.js"></script>
 
         <script>
-        $('input[name="options"]').on('change', function()
-        {
-            console.log('HA radio changed! ', $(this).attr('data-type'));
-
-            switch ($(this).attr('data-type'))
+            $('input[name="options"]').on('change', function()
             {
-                case 'conversion':
-                    console.log('conversion clicked! ', $(this).attr('name'));
-                    $('#conversion-container').toggle();
-                    $('#migration-container').toggle();
-                    break;
+                console.log('HA radio changed! ', $(this).attr('data-type'));
 
-                case 'migration':
-                    console.log('migration clicked! ', $(this).attr('name'));
-                    $('#conversion-container').toggle();
-                    $('#migration-container').toggle();
-                    break;
-            }
-        });
+                switch ($(this).attr('data-type'))
+                {
+                    case 'conversion':
+                        console.log('conversion clicked! ', $(this).attr('name'));
+                        $('#conversion-container').toggle();
+                        $('#migration-container').toggle();
+                        break;
 
-        $('#code-form').submit(function(event)
-        {
-            event.preventDefault();
+                    case 'migration':
+                        console.log('migration clicked! ', $(this).attr('name'));
+                        $('#conversion-container').toggle();
+                        $('#migration-container').toggle();
+                        break;
+                }
+            });
 
-            console.log('code-form submitted!');
-
-            var editor = $('#code-editor').val();
-            var content = $('#code-content').val();
-            var trigger = $('#code-trigger').val();
-            var scope = $('#code-scope').val();
-            var desc = $('#code-description').val();
-
-            console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
-
-            switch (editor)
+            $('#code-form').submit(function(event)
             {
-                case 'atom':
-                    populateToText('#snippet-output', createAtom(content, trigger, scope, desc));
-                    break;
-                case 'brackets':
-                    populateToText('#snippet-output', createBrackets(content, trigger, scope, desc));
-                    break;
-                case 'sublime':
-                    populateToText('#snippet-output', createSublime(content, trigger, scope, desc));
-                    break;
-                case 'visual_code':
-                    populateToText('#snippet-output', createVisualCode(content, trigger, scope, desc));
-                    break;
-                default:
+                event.preventDefault();
 
-            }
-        });
+                console.log('code-form submitted!');
+
+                var editor = $('#code-editor').val();
+                var content = $('#code-content').val();
+                var trigger = $('#code-trigger').val();
+                var scope = $('#code-scope').val();
+                var desc = $('#code-description').val();
+
+                console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
+
+                switch (editor)
+                {
+                    case 'atom':
+                        populateToText('#snippet-output', createAtom(content, trigger, scope, desc));
+                        break;
+                    case 'brackets':
+                        populateToText('#snippet-output', createBrackets(content, trigger, scope, desc));
+                        break;
+                    case 'sublime':
+                        populateToText('#snippet-output', createSublime(content, trigger, scope, desc));
+                        break;
+                    case 'visual_code':
+                        populateToText('#snippet-output', createVisualCode(content, trigger, scope, desc));
+                        break;
+                    default:
+
+                }
+            });
             // Share Overlay Dismiss
             // $('.dismiss-share').on('click', function(e)
             // {

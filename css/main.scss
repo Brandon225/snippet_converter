@@ -5,7 +5,10 @@ $trublack: #080808;
 $red: #D85360;
 $green: #85B861;
 $blue: #51b6c3;
+// $blue: #5daef2;
 $yellow: #C6884F;
+$brblue: #4fb1be;
+// $yellow: #c775df;
 $ltgrey: #9d9d9d;
 
 /****** TEXT STYLES ******/
@@ -32,6 +35,11 @@ $ltgrey: #9d9d9d;
 .text-blue
 {
     color: $blue;
+}
+
+.text-brblue
+{
+    color: $brblue;
 }
 
 .text-yellow
@@ -70,24 +78,24 @@ $ltgrey: #9d9d9d;
     background-color: $black;
 }
 
-.btn-yellow
+.btn-brblue
 {
-    background-color: $yellow;
-    background: darken($yellow, 20%);
-    border-color: $yellow;
+    background-color: $brblue;
+    background: darken($brblue, 20%);
+    border-color: $brblue;
 
     &.active, &:active
     {
-        background-color: $yellow!important;
-        border-color: $yellow!important;
-        box-shadow: 0 0 0 .2rem rgba( $yellow, .7 )!important;
+        background-color: $brblue!important;
+        border-color: $brblue!important;
+        box-shadow: 0 0 0 .2rem rgba( $brblue, .7 )!important;
     }
 
 
     &:hover
     {
-        background-color: $yellow;
-        border-color: $yellow;
+        background-color: $brblue;
+        border-color: $brblue;
     }
 }
 
