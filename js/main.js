@@ -126,6 +126,7 @@ $('#converter-form').submit(function(event)
 
     }
 
+    // Handle if select is visual studio code
     if (from === 'visual_code')
     {
         var $json = parseVisualCode(snipText);
@@ -156,6 +157,7 @@ $('#converter-form').submit(function(event)
 
             ////console.log('createSublime CONTENT: ' + content + ' TRIGGER: ' + trigger + ' SCOPE: ' + scope + ' DESC: ' + description);
 
+            // create the snippet and populate the textarea
             if (to === 'sublime')
             {
                 populateToText('textarea[name=convert_to_text]', createSublime(contentVC, triggerVC, scopeVC, descriptionVC));
@@ -254,7 +256,6 @@ function createBrackets(content, trigger, scope, description)
     snipArray["usage"] = scope;
     snipArray["description"] = description;
     snipArray["template"] = content;
-    // snipArray["inline"] = description;
 
     jsonObj.push(snipArray);
 
@@ -263,18 +264,6 @@ function createBrackets(content, trigger, scope, description)
 
 function createVisualCode(content, trigger, scope, description)
 {
-    /*"For Loop": {
-        "prefix": "for",
-        "body": [
-            "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
-            "\tvar ${3:element} = ${2:array}[${1:index}];",
-            "\t$0",
-            "}"
-        ],
-        "description": "For Loop"
-    },*/
-
-    ////console.log('createVisualCode content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
 
     var jsonObj = new Object();
     jsonObj.prefix = trigger;
@@ -327,14 +316,8 @@ function parseAtom(snipText)
 {
     //console.log('parseAtom snipText first char? ', snipText.charAt(0));
 
-    // atom idx 0,1,2,4 are keys
+    // grab the first char and test to see if snippet is in the correct format
     var firstChar = snipText.charAt(0);
-
-    // var lnFirst = snipText.split('\n');
-    // var splitFirst = lnFirst[1].split(':');
-
-    // //console.log('splitFirst? ', splitFirst);
-    // //console.log('splitFirst length? ', splitFirst.length);
 
     if (firstChar === "\"" || firstChar === "\'")
     {
@@ -432,15 +415,6 @@ function parseAtom(snipText)
 
 }
 
-function removeQuotes(text)
-{
-    return text.replace(/"/g, "").replace(/'/g, "");
-}
-
-function removeTripleQuotes(text)
-{
-    return text.replace('\"\"\"', '').replace('\"\"\"', '');
-}
 function parseBrackets(snipText)
 {
     var json = '';
@@ -486,6 +460,16 @@ function parseSublime(snipText)
     }
 }
 
+function removeQuotes(text)
+{
+    return text.replace(/"/g, "").replace(/'/g, "");
+}
+
+function removeTripleQuotes(text)
+{
+    return text.replace('\"\"\"', '').replace('\"\"\"', '');
+}
+
 function toggleInputError(input, show, type)
 {
     //console.log('toggleInputError: '+ input + ' show? ' + show + ' type? ' + type);
@@ -505,11 +489,6 @@ function toggleInputError(input, show, type)
         $(input).find('.error-block').css('display', 'none');
     }
 }
-
-$('[type="submit"]').mouseenter(function()
-{
-    //console.log('Mouse!');
-});
 
 
 /*Smooth link animation*/
