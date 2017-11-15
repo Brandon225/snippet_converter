@@ -151,6 +151,9 @@ footer {
 .page-container {
   margin-top: 60px; }
 
+#about-container .row:first-of-type, #details-container .row:first-of-type {
+  min-height: 100vh; }
+
 textarea {
   min-width: 100%;
   max-width: 100%;
@@ -172,11 +175,11 @@ input {
   display: none; }
 
 /****** HOME PAGE STYLES ******/
-#migration-container .scope-select {
+#migration-container, #migration-container .scope-select {
   display: none; }
 
-#conversion-container {
-  display: none; }
+#conversion-container, #migration-container {
+  min-height: 100vh; }
 
 .share-overlay {
   display: none;
@@ -222,5 +225,10 @@ input {
 #about-container p {
   color: #51b6c3; }
 
-#about-container .row:first-of-type {
-  min-height: 100vh; }
+/**************************** RESPONSIVE DATA ****************************/
+/* Extra Small */
+@media (min-width: 576px) and (max-width: 767px) {
+  #sidebar {
+    order: -1; } }
+
+/**************************** END RESPONSIVE DATA ****************************/

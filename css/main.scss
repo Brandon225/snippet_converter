@@ -302,6 +302,14 @@ footer
     margin-top: 60px;
 }
 
+#about-container, #details-container
+{
+    .row:first-of-type
+    {
+        min-height: 100vh;
+    }
+}
+
 textarea
 {
     min-width: 100%;
@@ -343,13 +351,17 @@ input
 
 
 /****** HOME PAGE STYLES ******/
-#migration-container .scope-select
+#migration-container, #migration-container .scope-select
 {
     display: none;
 }
-#conversion-container
+// #conversion-container
+// {
+//     display: none;
+// }
+#conversion-container, #migration-container
 {
-    display: none;
+    min-height: 100vh;
 }
 .share-overlay
 {
@@ -423,9 +435,17 @@ input
         color: $blue;
     }
 
-    .row:first-of-type
-    {
-        min-height: 100vh;
-    }
-
 }
+
+/**************************** RESPONSIVE DATA ****************************/
+
+/* Extra Small */
+@media (min-width: 576px) and (max-width: 767px)
+{
+    #sidebar
+    {
+        order: -1;
+    }
+}
+
+/**************************** END RESPONSIVE DATA ****************************/

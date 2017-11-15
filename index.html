@@ -63,11 +63,11 @@
 
         <div class="container page-container text-center">
             <div class="btn-group mx-auto" data-toggle="buttons">
-                <label class="btn btn-primary btn-brblue">
-                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off"> Conversion
+                <label class="btn btn-primary btn-brblue active">
+                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off" checked> Conversion
                 </label>
-                <label id="migration-btn" class="btn btn-primary btn-brblue active">
-                    <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off" checked> Migration
+                <label id="migration-btn" class="btn btn-primary btn-brblue">
+                    <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off"> Migration
                 </label>
             </div>
         </div>
@@ -75,7 +75,7 @@
         <!-- CONVERSION CONTAINER -->
         <div id="conversion-container" class="container mt-4">
 
-            <h4 class="lead text-blue text-center my-5">Convert your code into snippets formatted for your code editor!</h4>
+            <h4 class="lead text-white text-center my-5">Convert your code into snippets formatted for your code editor!</h4>
             <hr>
             <form id="code-form" class="row">
 
@@ -199,7 +199,7 @@
         <!-- MIGRATION CONTAINER -->
         <div id="migration-container" class="container mt-4r">
 
-            <h4 class="lead text-blue text-center my-5">Migrate code snippets from your old code editor to your new code editor!</h4>
+            <h4 class="lead text-white text-center my-5">Migrate code snippets from your old code editor to your new code editor!</h4>
             <hr>
             <form id="converter-form" class="row">
 
@@ -291,7 +291,7 @@
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
 
-                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green"><snippet>
+                        <textarea id="convert-from-text" name="convert_from_text" rows="10" aria-describedby="from-error" class="text-green"><snippet>
 	<content><![CDATA[
 console.log('$1: ', $2);
 ]]></content>
@@ -299,7 +299,7 @@ console.log('$1: ', $2);
 	<scope>source.js</scope>
 	<description>Log to the Console</description>
 </snippet></textarea>
-                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span></div>
+                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank"><u>For more info on formatting.</u></a></span></div>
                 </div>
 
                 <div class='col-sm'>
@@ -317,7 +317,7 @@ console.log('$1: ', $2);
 
                     <!-- Allow user to select To text editor -->
                     <div class="form-group">
-                        <textarea name="convert_to_text" rows="20" class="text-yellow"></textarea>
+                        <textarea name="convert_to_text" rows="10" class="text-yellow"></textarea>
                     </div>
                 </div>
 
