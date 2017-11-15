@@ -73,7 +73,10 @@
         </div>
 
         <!-- CONVERSION CONTAINER -->
-        <div id="conversion-container" class="container page-container">
+        <div id="conversion-container" class="container mt-4">
+
+            <h4 class="lead text-blue text-center my-5">Convert your code into snippets formatted for your code editor!</h4>
+            <hr>
             <form id="code-form" class="row">
 
                 <div class="col-sm">
@@ -162,25 +165,25 @@
 
                     <div class="form-group">
                         <label for="code_description" class="text-white">Description</label>
-                        <textarea id="code-description" name="code_description" rows="2" class="text-blue" required></textarea>
+                        <textarea id="code-description" name="code_description" rows="2" class="text-yellow" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="code_trigger" class="text-white">Trigger <em>(a keyword to trigger the snippet)</em></label>
-                        <input type="text" id="code-trigger" name="code_trigger" class="text-blue custom-input" required>
+                        <input type="text" id="code-trigger" name="code_trigger" class="text-yellow custom-input" required>
                     </div>
 
                     <!-- Allow user to select To text editor -->
                     <div id="code-content-fg" class="form-group">
                         <label for="code_content" class="text-white">Code</label>
-                        <textarea id="code-content" name="code_content" rows="5" class="text-blue" required></textarea>
+                        <textarea id="code-content" name="code_content" rows="5" class="text-yellow" required></textarea>
                     </div>
                 </div>
 
                 <div class='col-sm'>
                     <!-- Allow user to select To text editor -->
                     <div class="form-group">
-                        <label for="snippet_output" class="title text-green">SNIPPET</label>
+                        <label for="snippet_output" class="title text-green">snippet</label>
                         <textarea id="snippet-output" name="snippet_output" rows="20" class="text-green"></textarea>
                     </div>
                 </div>
@@ -194,19 +197,21 @@
 
 
         <!-- MIGRATION CONTAINER -->
-        <div id="migration-container" class="container page-container">
+        <div id="migration-container" class="container mt-4r">
 
+            <h4 class="lead text-blue text-center my-5">Migrate code snippets from your old code editor to your new code editor!</h4>
+            <hr>
             <form id="converter-form" class="row">
 
                 <div class="col-sm">
                     <!-- Allow user to select From text editor -->
                     <div class="form-group">
-                        <label for="convert_from" class="title text-green">FROM</label>
+                        <label for="convert_from" class="title text-green">from</label>
                         <select id="convert-from" class="form-control custom-select" name="convert_from" required>
                             <option value=""></option>
-                            <option value="atom" selected>Atom</option>
+                            <option value="atom">Atom</option>
                             <option value="brackets">Brackets</option>
-                            <option value="sublime">Sublime Text</option>
+                            <option value="sublime" selected>Sublime Text</option>
                             <option value="visual_code">Visual Studio Code</option>
                         </select>
                     </div>
@@ -286,29 +291,33 @@
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
 
-                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green">".text.html":
-   "A bootstrap button":
-       "prefix": "btn"
-       "body": """<button type="submit" class="btn btn-success btn-block">Convert</button>""" </textarea>
+                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green"><snippet>
+	<content><![CDATA[
+console.log('$1: ', $2);
+]]></content>
+	<tabTrigger>log</tabTrigger>
+	<scope>source.js</scope>
+	<description>Log to the Console</description>
+</snippet></textarea>
                     <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span></div>
                 </div>
 
                 <div class='col-sm'>
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
-                        <label for="convert_to" class="text-yellow title">TO</label>
+                        <label for="convert_to" class="text-yellow title">to</label>
                         <select id="convert-to" class="form-control custom-select" name="convert_to" required>
                             <option value=""></option>
-                            <option value="atom" disabled>Atom</option>
+                            <option value="atom">Atom</option>
                             <option value="brackets">Brackets</option>
-                            <option value="sublime">Sublime Text</option>
+                            <option value="sublime" disabled>Sublime Text</option>
                             <option value="visual_code">Visual Studio Code</option>
                         </select>
                     </div>
 
                     <!-- Allow user to select To text editor -->
                     <div class="form-group">
-                        <textarea name="convert_to_text" rows="20" class="text-blue"></textarea>
+                        <textarea name="convert_to_text" rows="20" class="text-yellow"></textarea>
                     </div>
                 </div>
 
@@ -366,18 +375,18 @@
         <script>
             $('input[name="options"]').on('change', function()
             {
-                console.log('HA radio changed! ', $(this).attr('data-type'));
+                //console.log('HA radio changed! ', $(this).attr('data-type'));
 
                 switch ($(this).attr('data-type'))
                 {
                     case 'conversion':
-                        console.log('conversion clicked! ', $(this).attr('name'));
+                        //console.log('conversion clicked! ', $(this).attr('name'));
                         $('#conversion-container').toggle();
                         $('#migration-container').toggle();
                         break;
 
                     case 'migration':
-                        console.log('migration clicked! ', $(this).attr('name'));
+                        //console.log('migration clicked! ', $(this).attr('name'));
                         $('#conversion-container').toggle();
                         $('#migration-container').toggle();
                         break;
@@ -388,7 +397,7 @@
             {
                 event.preventDefault();
 
-                console.log('code-form submitted!');
+                //console.log('code-form submitted!');
 
                 var editor = $('#code-editor').val();
                 var content = $('#code-content').val();
@@ -396,7 +405,7 @@
                 var scope = $('#code-scope').val();
                 var desc = $('#code-description').val();
 
-                console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
+                //console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
 
                 switch (editor)
                 {
@@ -421,7 +430,7 @@
             // {
             //     e.preventDefault();
             //
-            //     console.log('Dismiss share clicked!');
+            //     //console.log('Dismiss share clicked!');
             //
             //     $('.share-overlay').toggle();
             //     $('body').removeClass('modal-open');

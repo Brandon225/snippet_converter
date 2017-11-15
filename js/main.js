@@ -2,12 +2,12 @@ $('#convert-from').on('change', function()
 {
     var selected = $(this).val();
 
-    console.log('selected? ', selected);
+    //console.log('selected? ', selected);
 
     var $to = $('#convert-to');
     var $toOpt = $('#convert-to option[value="' + selected + '"]');
 
-    console.log('toOpt? ', $toOpt);
+    //console.log('toOpt? ', $toOpt);
 
     // first enable all options
     $to.children().attr('disabled', false);
@@ -54,14 +54,14 @@ $('#converter-form').submit(function(event)
     // Grab the text from the FROM textarea
     var snipText = $('textarea[name=convert_from_text]').val();
 
-    //console.log('from? ', from);
-    //console.log('to? ', to);
-    //console.log('snipText? ', snipText);
+    ////console.log('from? ', from);
+    ////console.log('to? ', to);
+    ////console.log('snipText? ', snipText);
 
     // Handle if select is atom
     if (from === 'atom')
     {
-        //console.log('Convert from is atom!');
+        ////console.log('Convert from is atom!');
 
         var snipObj = parseAtom(snipText);
         if (snipObj)
@@ -99,7 +99,7 @@ $('#converter-form').submit(function(event)
             $scope = $xml.find('scope'),
             $description = $xml.find('description');
 
-            //console.log('xml? ', $xml);
+            ////console.log('xml? ', $xml);
             // Convert the parsed data into Atom's format
             if (to === 'atom')
             {
@@ -109,7 +109,7 @@ $('#converter-form').submit(function(event)
             // Convert the parsed data into Bracket's format
             if (to === 'brackets')
             {
-                //console.log('To brackets!');
+                ////console.log('To brackets!');
 
                 populateToText('textarea[name=convert_to_text]', createBrackets($content.text(), $trigger.text(), $scope.text(), $description.text()));
             }
@@ -134,7 +134,7 @@ $('#converter-form').submit(function(event)
             var $inJson;
             for (var key in $json)
             {
-               //console.log(' name=' + key + ' value=' + $json[key]);
+               ////console.log(' name=' + key + ' value=' + $json[key]);
                $inJson = $json[key];
             }
 
@@ -143,18 +143,18 @@ $('#converter-form').submit(function(event)
             $.each($inJson['body'], function (index, value)
             {
                 contentVC += value + '\n';
-                //console.log('content: ', value);
+                ////console.log('content: ', value);
 
             });
 
-            //console.log('content: ', content);
+            ////console.log('content: ', content);
 
-            // //console.log('visual code content? ', content);
+            // ////console.log('visual code content? ', content);
             var triggerVC = $inJson['prefix'];
             var scopeVC = $('select[name=scope_from]').val();
             var descriptionVC = $inJson['description'];
 
-            //console.log('createSublime CONTENT: ' + content + ' TRIGGER: ' + trigger + ' SCOPE: ' + scope + ' DESC: ' + description);
+            ////console.log('createSublime CONTENT: ' + content + ' TRIGGER: ' + trigger + ' SCOPE: ' + scope + ' DESC: ' + description);
 
             if (to === 'sublime')
             {
@@ -181,7 +181,7 @@ $('#converter-form').submit(function(event)
     {
         var $jsonBracObj = parseBrackets(snipText);
 
-        console.log('jsonBracObj? ', $jsonBracObj);
+        //console.log('jsonBracObj? ', $jsonBracObj);
 
         if ($jsonBracObj)
         {
@@ -192,7 +192,7 @@ $('#converter-form').submit(function(event)
             var scope = $jsonBrac['usage'];
             var description = $jsonBrac['description'];
 
-            //console.log('brackets jsonBrac? ', $jsonBrac);
+            ////console.log('brackets jsonBrac? ', $jsonBrac);
 
             if (to === 'sublime')
             {
@@ -231,7 +231,7 @@ function populateToText(element, text)
 
 function createAtom(content, trigger, scope, description)
 {
-    //console.log('createAtom content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
+    ////console.log('createAtom content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
 
     var atomSnip = "";
 
@@ -274,7 +274,7 @@ function createVisualCode(content, trigger, scope, description)
         "description": "For Loop"
     },*/
 
-    //console.log('createVisualCode content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
+    ////console.log('createVisualCode content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
 
     var jsonObj = new Object();
     jsonObj.prefix = trigger;
@@ -283,14 +283,14 @@ function createVisualCode(content, trigger, scope, description)
     var bodyContent = '';
     $.each(body, function (index, value)
     {
-        console.log('body index: ' + index + ' value: ' + value);
+        //console.log('body index: ' + index + ' value: ' + value);
         bodyContent += $.trim(value) + '\n';
     });
 
-    console.log('bodyContent? ', bodyContent);
+    //console.log('bodyContent? ', bodyContent);
     jsonObj.body = bodyContent.split('\n');
 
-    console.log('jsonObj body? ', jsonObj.body);
+    //console.log('jsonObj body? ', jsonObj.body);
 
     jsonObj.description = description;
 
@@ -314,7 +314,7 @@ function createVisualCode(content, trigger, scope, description)
 
 function createSublime(content, trigger, scope, description)
 {
-    //console.log('createSublime content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
+    ////console.log('createSublime content: ' + content + ' trigger: ' + trigger + ' scope: ' + scope + ' desc: ' + description);
     var subText = '<snippet><content><![CDATA['+ content + ']]></content>';
     subText += '<tabTrigger>' + trigger  + '</tabTrigger>';
     subText += '<scope>' + scope  + '</scope>';
@@ -325,7 +325,7 @@ function createSublime(content, trigger, scope, description)
 
 function parseAtom(snipText)
 {
-    console.log('parseAtom snipText first char? ', snipText.charAt(0));
+    //console.log('parseAtom snipText first char? ', snipText.charAt(0));
 
     // atom idx 0,1,2,4 are keys
     var firstChar = snipText.charAt(0);
@@ -333,35 +333,35 @@ function parseAtom(snipText)
     // var lnFirst = snipText.split('\n');
     // var splitFirst = lnFirst[1].split(':');
 
-    // console.log('splitFirst? ', splitFirst);
-    // console.log('splitFirst length? ', splitFirst.length);
+    // //console.log('splitFirst? ', splitFirst);
+    // //console.log('splitFirst length? ', splitFirst.length);
 
     if (firstChar === "\"" || firstChar === "\'")
     {
-        console.log('firstChar is quotation! ', firstChar);
+        //console.log('firstChar is quotation! ', firstChar);
         var snipObj = new Object();
         // snipText = snipText.replace(/"/g, "").replace(/'/g, "");
         snipText = $.trim(snipText);
-        console.log('SnipText? ', snipText);
+        //console.log('SnipText? ', snipText);
         var snippet = snipText.split('\n');
-        console.log('snippet? ', snippet);
+        //console.log('snippet? ', snippet);
         for (var i = 0; i < snippet.length; i++)
         {
             var row = $.trim(snippet[i]);
 
             if (row.startsWith('"prefix"'))
             {
-                console.log('prefix row');
+                //console.log('prefix row');
                 // var value = $.trim(row.replace('"prefix:"', ''));
                 var value = row.split(':');
 
-                console.log('prefix: ', value);
+                //console.log('prefix: ', value);
 
                 // var updatedRow = $.trim(row.replace(value[1], ''));
 
                 snipObj.trigger = removeQuotes($.trim(value[1]));
 
-                console.log('snipObj trigger? ' + snipObj.trigger + ' i? ' + i);
+                //console.log('snipObj trigger? ' + snipObj.trigger + ' i? ' + i);
 
             } else if (i === snippet.length-1)
             {
@@ -373,12 +373,12 @@ function parseAtom(snipText)
                     {
                         var contentRow = snippet[idx];
 
-                        console.log('contentRow? ' + contentRow + ' idx? ' + idx);
+                        //console.log('contentRow? ' + contentRow + ' idx? ' + idx);
                         if (idx === 3)
                         {
                             contentRow = contentRow.split(':');
 
-                            console.log('contentRow: ', contentRow[1]);
+                            //console.log('contentRow: ', contentRow[1]);
 
                             // var updatedRow = $.trim(row.replace(value[1], ''));
 
@@ -392,35 +392,35 @@ function parseAtom(snipText)
 
                     snipObj.content = content;
 
-                    console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
+                    //console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
                 } else {
 
                     var value = $.trim(row).split(':');
 
                     snipObj.content = $.trim(removeTripleQuotes(value[1]));
 
-                    console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
+                    //console.log('snipObj content? ' + snipObj.content + ' i? ' + i);
 
                 }
 
             } else if (i === 1) {
 
-                console.log('index is 1!');
+                //console.log('index is 1!');
                 var value = $.trim(row.replace(':', ''));
 
                 snipObj.description = removeQuotes(value);
-                console.log('snipObj description? ' + snipObj.description + ' i? ' + i);
+                //console.log('snipObj description? ' + snipObj.description + ' i? ' + i);
 
 
             } else if (i === 0)
             {
 
-                console.log('index is 2!');
+                //console.log('index is 2!');
 
                 var value = $.trim(row.replace(':', ''));
 
                 snipObj.scope = removeQuotes(value.replace('.',''));
-                console.log('snipObj scope? ' + snipObj.scope + ' i? ' + i);
+                //console.log('snipObj scope? ' + snipObj.scope + ' i? ' + i);
 
             }
         }
@@ -445,12 +445,12 @@ function parseBrackets(snipText)
 {
     var json = '';
     try {
-        console.log('IS valid json: ', json);
+        //console.log('IS valid json: ', json);
         return JSON.parse(snipText);
 
     } catch (err) {
 
-        console.log('NOT valid json err: ', err);
+        //console.log('NOT valid json err: ', err);
         return;
     }
 }
@@ -459,12 +459,12 @@ function parseVisualCode(snipText)
 {
     var json = '';
     try {
-        console.log('IS valid json: ', json);
+        //console.log('IS valid json: ', json);
         return JSON.parse(snipText);
 
     } catch (err) {
 
-        console.log('NOT valid json err: ', err);
+        //console.log('NOT valid json err: ', err);
         return;
     }
 }
@@ -475,12 +475,12 @@ function parseSublime(snipText)
     var xmlDoc = '';
 
     try {
-        console.log('IS valid xmlDoc');
+        //console.log('IS valid xmlDoc');
         xmlDoc = $.parseXML(snipText); //is valid XML
         return $( xmlDoc );
 
     } catch (err) {
-        console.log('NOT valid xmlDoc err: ', err);
+        //console.log('NOT valid xmlDoc err: ', err);
         // was not XML
         return;
     }
@@ -488,7 +488,7 @@ function parseSublime(snipText)
 
 function toggleInputError(input, show, type)
 {
-    console.log('toggleInputError: '+ input + ' show? ' + show + ' type? ' + type);
+    //console.log('toggleInputError: '+ input + ' show? ' + show + ' type? ' + type);
 
     if (show)
     {
@@ -508,7 +508,7 @@ function toggleInputError(input, show, type)
 
 $('[type="submit"]').mouseenter(function()
 {
-    console.log('Mouse!');
+    //console.log('Mouse!');
 });
 
 
