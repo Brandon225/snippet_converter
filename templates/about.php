@@ -47,7 +47,7 @@
                         <hr class="my-1">
                         <li><a class="text-black hover-red" href="mailto:reimagin8d@reimagin8d.com?subject=Contact%20Inquiry">Email</a></li>
                         <li><a class="text-black hover-red" href="https://www.upwork.com/o/profiles/users/_~013867cd1e9a262919/" target="_blank">Upwork</a></li>
-                        <li><a class="text-black hover-red" href="www.linkedin.com/in/brandon-tindle" target="_blank">LinkedIn</a></li>
+                        <li><a class="text-black hover-red" href="https://www.linkedin.com/in/brandon-tindle" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
