@@ -4,30 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home | Snippets</title>
-        <meta name="description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <!--FaceBook-->
-        <meta property="og:url" content="http://snip.local:8888"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Home | Snippets"/>
-        <meta property="og:image" content="http://snip.local:8888/img/logo.png"/>
-        <meta property="og:site_name" content="Snippets"/>
-        <meta property="og:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!"/>
-
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@reimagind8d" />
-        <meta name="twitter:title" content="Home | Snippets" />
-        <meta name="twitter:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!" />
-        <meta name="twitter:image" content="http://snip.local:8888/img/logo.png" />
-
-        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <?php include('includes/head.php') ?>
 
         <style>
             body {
@@ -36,30 +13,13 @@
                 background-color: #222;
             }
         </style>
-        <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body class="mb-4">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav class="navbar navbar-expand-lg navbar-dark back-black fixed-top" role="navigation">
-            <div class="container">
-                <a class="navbar-brand active" href="index.html">Snippets</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="nav-collapse">
-                    <div class="navbar-nav ml-auto">
-                        <a class="nav-item nav-link" href="details.html">Details</a>
-                        <a class="nav-item nav-link" href="about.html">About</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php include('includes/navbar.php') ?>
 
         <div class="container page-container text-center">
             <div class="btn-group mx-auto" data-toggle="buttons">
@@ -331,12 +291,7 @@ console.log('$1: ', $2);
 
         </div> <!-- /container -->
 
-        <footer>
-            <div class="container">
-                <hr>
-                <a href="http://reimagin8d.com" target="_blank">&copy; reimagin8d 2017</a>
-            </div>
-        </footer>
+        <?php include('includes/footer.php') ?>
         <!-- <div class="share-overlay">
             <div class="container page-container">
                 <div class="row">
@@ -367,14 +322,11 @@ console.log('$1: ', $2);
         <!-- <script src="js/vendor/jquery-1.11.2.min.js"></script> -->
 
         <!-- <script src="js/vendor/bootstrap.min.js"></script> -->
-        <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-        <script src="js/main.js"></script>
-        <script src="js/vendor/retina.js"></script>
+        <?php include('includes/scripts.php') ?>
 
         <script>
+            $('#nav-home').addClass('active');
+
             $('input[name="options"]').on('change', function()
             {
                 //console.log('HA radio changed! ', $(this).attr('data-type'));
@@ -427,17 +379,6 @@ console.log('$1: ', $2);
 
                 }
             });
-            // Share Overlay Dismiss
-            // $('.dismiss-share').on('click', function(e)
-            // {
-            //     e.preventDefault();
-            //
-            //     //console.log('Dismiss share clicked!');
-            //
-            //     $('.share-overlay').toggle();
-            //     $('body').removeClass('modal-open');
-            //
-            // });
         </script>
 
         <!-- Facebook share button script -->

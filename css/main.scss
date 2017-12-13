@@ -184,7 +184,7 @@ body
 
         &::before
         {
-            content: url(../img/logo.svg);
+            content: url(../img/snip_logo.svg);
             margin-right: 8px;
         }
 
@@ -199,7 +199,7 @@ body
 
             &::before
             {
-                content: url(../img/logo_high.svg);
+                content: url(../img/snip_logo_high.svg);
             }
         }
     }
@@ -208,7 +208,7 @@ body
         color: $red;
         &::before
         {
-            content: url(../img/logo_high.svg);
+            content: url(../img/snip_logo_high.svg);
         }
 
 
@@ -217,7 +217,7 @@ body
             color: $ltgrey!important;
             &::before
             {
-                content: url(../img/logo.svg);
+                content: url(../img/snip_logo.svg);
             }
         }
     }
