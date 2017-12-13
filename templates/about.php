@@ -6,6 +6,7 @@
 
 <head>
     <?php include('includes/head.php') ?>
+    <link rel="canonical" href="http://snippets.reimagin8d.com/about/">
 
     <style>
         body {

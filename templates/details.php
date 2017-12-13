@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <?php include('includes/head.php') ?>
+        <link rel="canonical" href="http://snippets.reimagin8d.com/details/">
 
         <style>
             body

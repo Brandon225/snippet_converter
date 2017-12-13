@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <?php include('includes/head.php') ?>
+        <link rel="canonical" href="http://snippets.reimagin8d.com">
 
         <style>
             body {
@@ -261,7 +262,7 @@ console.log('$1: ', $2);
 	<scope>source.js</scope>
 	<description>Log to the Console</description>
 </snippet></textarea>
-                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank"><u>For more info on formatting.</u></a></span></div>
+                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="/details/" target="_blank"><u>For more info on formatting.</u></a></span></div>
                 </div>
 
                 <div class='col-sm'>
