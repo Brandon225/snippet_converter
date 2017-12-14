@@ -132,6 +132,7 @@
     </body>
 
     <?php include('includes/scripts.php') ?>
+    <?php include('includes/gAnalytics.php') ?>
 
     <script>
 

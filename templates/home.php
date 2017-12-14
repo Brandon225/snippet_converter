@@ -293,6 +293,8 @@ console.log('$1: ', $2);
         </div> <!-- /container -->
 
         <?php include('includes/footer.php') ?>
+        <?php include('includes/gAnalytics.php') ?>
+
         <!-- <div class="share-overlay">
             <div class="container page-container">
                 <div class="row">
