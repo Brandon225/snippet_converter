@@ -353,6 +353,11 @@ AddDefaultCharset utf-8
     # (5)
     # RewriteOptions <options>
 
+    RewriteRule ^home/(.*)/?$ /?action=home [QSA,NC,L]
+    RewriteRule ^details/(.*)/?$ /?action=details [QSA,NC,L]
+    RewriteRule ^about/(.*)/?$ /?action=about [QSA,NC,L]
+
+
 </IfModule>
 
 # ----------------------------------------------------------------------

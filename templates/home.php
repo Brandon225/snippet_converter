@@ -4,30 +4,8 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home | Snippets</title>
-        <meta name="description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <!--FaceBook-->
-        <meta property="og:url" content="http://snip.local:8888"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Home | Snippets"/>
-        <meta property="og:image" content="http://snip.local:8888/img/logo.png"/>
-        <meta property="og:site_name" content="Snippets"/>
-        <meta property="og:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!"/>
-
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@reimagind8d" />
-        <meta name="twitter:title" content="Home | Snippets" />
-        <meta name="twitter:description" content="A snippet converter. Moving to a new code editor?  Convert your code snippets quickly and easily!" />
-        <meta name="twitter:image" content="http://snip.local:8888/img/logo.png" />
-
-        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <?php include('includes/head.php') ?>
+        <link rel="canonical" href="http://snippets.reimagin8d.com">
 
         <style>
             body {
@@ -36,44 +14,30 @@
                 background-color: #222;
             }
         </style>
-        <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body class="mb-4">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav class="navbar navbar-expand-lg navbar-dark back-black fixed-top" role="navigation">
-            <div class="container">
-                <a class="navbar-brand active" href="index.html">Snippets</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="nav-collapse">
-                    <div class="navbar-nav ml-auto">
-                        <a class="nav-item nav-link" href="details.html">Details</a>
-                        <a class="nav-item nav-link" href="about.html">About</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php include('includes/navbar.php') ?>
 
         <div class="container page-container text-center">
             <div class="btn-group mx-auto" data-toggle="buttons">
-                <label class="btn btn-primary btn-yellow">
-                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off"> Conversion
+                <label class="btn btn-primary btn-brblue active">
+                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off" checked> Creation
                 </label>
-                <label id="migration-btn" class="btn btn-primary btn-yellow active">
-                    <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off" checked> Migration
+                <label id="migration-btn" class="btn btn-primary btn-brblue">
+                    <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off"> Migration
                 </label>
             </div>
         </div>
 
         <!-- CONVERSION CONTAINER -->
-        <div id="conversion-container" class="container page-container">
+        <div id="conversion-container" class="container mt-4">
+
+            <h4 class="lead text-white text-center my-5">Create code snippets formatted for your code editor!</h4>
+            <hr>
             <form id="code-form" class="row">
 
                 <div class="col-sm">
@@ -89,6 +53,7 @@
                         </select>
                     </div>
 
+                    <!-- List of scopes to apply to snippet -->
                     <div class="form-group scope-select">
                         <label class="text-white" for="code_scope">Scope/Source</label>
                         <select id="code-scope" name="code_scope" class="form-control custom-select" required>
@@ -109,7 +74,7 @@
                             <option value="source.dot">GraphViz: source.dot</option>
                             <option value="source.groovy">Groovy: source.groovy</option>
                             <option value="source.haskell">Haskell: source.haskell</option>
-                            <option value="text.html(.basic)">HTML: text.html(.basic)</option>
+                            <option value="text.html">HTML: text.html</option>
                             <option value="text.html.jsp">JSP: text.html.jsp</option>
                             <option value="source.java">Java: source.java</option>
                             <option value="source.java-props">Java Properties: source.java-props</option>
@@ -162,25 +127,25 @@
 
                     <div class="form-group">
                         <label for="code_description" class="text-white">Description</label>
-                        <textarea id="code-description" name="code_description" rows="2" class="text-blue" required></textarea>
+                        <textarea id="code-description" name="code_description" rows="2" class="text-yellow" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="code_trigger" class="text-white">Trigger <em>(a keyword to trigger the snippet)</em></label>
-                        <input type="text" id="code-trigger" name="code_trigger" class="text-blue custom-input" required>
+                        <input type="text" id="code-trigger" name="code_trigger" class="text-yellow custom-input" required>
                     </div>
 
                     <!-- Allow user to select To text editor -->
                     <div id="code-content-fg" class="form-group">
                         <label for="code_content" class="text-white">Code</label>
-                        <textarea id="code-content" name="code_content" rows="5" class="text-blue" required></textarea>
+                        <textarea id="code-content" name="code_content" rows="5" class="text-yellow" required></textarea>
                     </div>
                 </div>
 
                 <div class='col-sm'>
                     <!-- Allow user to select To text editor -->
                     <div class="form-group">
-                        <label for="snippet_output" class="title text-green">SNIPPET</label>
+                        <label for="snippet_output" class="title text-green">snippet</label>
                         <textarea id="snippet-output" name="snippet_output" rows="20" class="text-green"></textarea>
                     </div>
                 </div>
@@ -194,14 +159,16 @@
 
 
         <!-- MIGRATION CONTAINER -->
-        <div id="migration-container" class="container page-container">
+        <div id="migration-container" class="container mt-4r">
 
+            <h4 class="lead text-white text-center my-5">Migrate code snippets from your old code editor to your new code editor!</h4>
+            <hr>
             <form id="converter-form" class="row">
 
                 <div class="col-sm">
                     <!-- Allow user to select From text editor -->
                     <div class="form-group">
-                        <label for="convert_from" class="title text-green">FROM</label>
+                        <label for="convert_from" class="title text-green">from</label>
                         <select id="convert-from" class="form-control custom-select" name="convert_from" required>
                             <option value=""></option>
                             <option value="atom">Atom</option>
@@ -211,6 +178,7 @@
                         </select>
                     </div>
 
+                    <!-- List of scopes to apply to snippet -->
                     <div class="form-group scope-select">
                         <label class="text-white" for="scope_from">Scope/Source</label>
                         <select class="form-control custom-select" name="scope_from">
@@ -231,7 +199,7 @@
                             <option value="source.dot">GraphViz: source.dot</option>
                             <option value="source.groovy">Groovy: source.groovy</option>
                             <option value="source.haskell">Haskell: source.haskell</option>
-                            <option value="text.html(.basic)">HTML: text.html(.basic)</option>
+                            <option value="text.html">HTML: text.html</option>
                             <option value="text.html.jsp">JSP: text.html.jsp</option>
                             <option value="source.java">Java: source.java</option>
                             <option value="source.java-props">Java Properties: source.java-props</option>
@@ -286,7 +254,7 @@
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
 
-                        <textarea id="convert-from-text" name="convert_from_text" rows="20" aria-describedby="from-error" class="text-green"><snippet>
+                        <textarea id="convert-from-text" name="convert_from_text" rows="10" aria-describedby="from-error" class="text-green"><snippet>
 	<content><![CDATA[
 console.log('$1: ', $2);
 ]]></content>
@@ -294,13 +262,13 @@ console.log('$1: ', $2);
 	<scope>source.js</scope>
 	<description>Log to the Console</description>
 </snippet></textarea>
-                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="details.html" target="_blank">For more info on formatting.</a></span></div>
+                    <span id="from-error" class="error-block text-red">Invalid format for selected editor. <a id="error-link" class="text-ltgrey hover-red" href="/details/" target="_blank"><u>For more info on formatting.</u></a></span></div>
                 </div>
 
                 <div class='col-sm'>
                     <!-- Allow user to select To text editor -->
                     <div id="from-fg" class="form-group">
-                        <label for="convert_to" class="text-blue title">TO</label>
+                        <label for="convert_to" class="text-yellow title">to</label>
                         <select id="convert-to" class="form-control custom-select" name="convert_to" required>
                             <option value=""></option>
                             <option value="atom">Atom</option>
@@ -312,7 +280,7 @@ console.log('$1: ', $2);
 
                     <!-- Allow user to select To text editor -->
                     <div class="form-group">
-                        <textarea name="convert_to_text" rows="20" class="text-blue"></textarea>
+                        <textarea name="convert_to_text" rows="10" class="text-yellow"></textarea>
                     </div>
                 </div>
 
@@ -324,12 +292,9 @@ console.log('$1: ', $2);
 
         </div> <!-- /container -->
 
-        <footer>
-            <div class="container">
-                <hr>
-                <a href="http://reimagin8d.com" target="_blank">&copy; reimagin8d 2017</a>
-            </div>
-        </footer>
+        <?php include('includes/footer.php') ?>
+        <?php include('includes/gAnalytics.php') ?>
+
         <!-- <div class="share-overlay">
             <div class="container page-container">
                 <div class="row">
@@ -360,77 +325,63 @@ console.log('$1: ', $2);
         <!-- <script src="js/vendor/jquery-1.11.2.min.js"></script> -->
 
         <!-- <script src="js/vendor/bootstrap.min.js"></script> -->
-        <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-        <script src="js/main.js"></script>
-        <script src="js/vendor/retina.js"></script>
+        <?php include('includes/scripts.php') ?>
 
         <script>
-        $('input[name="options"]').on('change', function()
-        {
-            console.log('HA radio changed! ', $(this).attr('data-type'));
+            $('#nav-home').addClass('active');
 
-            switch ($(this).attr('data-type'))
+            $('input[name="options"]').on('change', function()
             {
-                case 'conversion':
-                    console.log('conversion clicked! ', $(this).attr('name'));
-                    $('#conversion-container').toggle();
-                    $('#migration-container').toggle();
-                    break;
+                //console.log('HA radio changed! ', $(this).attr('data-type'));
 
-                case 'migration':
-                    console.log('migration clicked! ', $(this).attr('name'));
-                    $('#conversion-container').toggle();
-                    $('#migration-container').toggle();
-                    break;
-            }
-        });
+                switch ($(this).attr('data-type'))
+                {
+                    case 'conversion':
+                        //console.log('conversion clicked! ', $(this).attr('name'));
+                        $('#conversion-container').toggle();
+                        $('#migration-container').toggle();
+                        break;
 
-        $('#code-form').submit(function(event)
-        {
-            event.preventDefault();
+                    case 'migration':
+                        //console.log('migration clicked! ', $(this).attr('name'));
+                        $('#conversion-container').toggle();
+                        $('#migration-container').toggle();
+                        break;
+                }
+            });
 
-            console.log('code-form submitted!');
-
-            var editor = $('#code-editor').val();
-            var content = $('#code-content').val();
-            var trigger = $('#code-trigger').val();
-            var scope = $('#code-scope').val();
-            var desc = $('#code-description').val();
-
-            console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
-
-            switch (editor)
+            $('#code-form').submit(function(event)
             {
-                case 'atom':
-                    populateToText('#snippet-output', createAtom(content, trigger, scope, desc));
-                    break;
-                case 'brackets':
-                    populateToText('#snippet-output', createBrackets(content, trigger, scope, desc));
-                    break;
-                case 'sublime':
-                    populateToText('#snippet-output', createSublime(content, trigger, scope, desc));
-                    break;
-                case 'visual_code':
-                    populateToText('#snippet-output', createVisualCode(content, trigger, scope, desc));
-                    break;
-                default:
+                event.preventDefault();
 
-            }
-        });
-            // Share Overlay Dismiss
-            // $('.dismiss-share').on('click', function(e)
-            // {
-            //     e.preventDefault();
-            //
-            //     console.log('Dismiss share clicked!');
-            //
-            //     $('.share-overlay').toggle();
-            //     $('body').removeClass('modal-open');
-            //
-            // });
+                //console.log('code-form submitted!');
+
+                var editor = $('#code-editor').val();
+                var content = $('#code-content').val();
+                var trigger = $('#code-trigger').val();
+                var scope = $('#code-scope').val();
+                var desc = $('#code-description').val();
+
+                //console.log('editor: ' + editor + ' scope: ' + scope + ' desc: ' + desc + ' trigger: ' + trigger + ' content: ' + content);
+
+                switch (editor)
+                {
+                    case 'atom':
+                        populateToText('#snippet-output', createAtom(content, trigger, scope, desc));
+                        break;
+                    case 'brackets':
+                        populateToText('#snippet-output', createBrackets(content, trigger, scope, desc));
+                        break;
+                    case 'sublime':
+                        populateToText('#snippet-output', createSublime(content, trigger, scope, desc));
+                        break;
+                    case 'visual_code':
+                        populateToText('#snippet-output', createVisualCode(content, trigger, scope, desc));
+                        break;
+                    default:
+
+                }
+            });
         </script>
 
         <!-- Facebook share button script -->
