@@ -25,7 +25,7 @@
         <div class="container page-container text-center">
             <div class="btn-group mx-auto" data-toggle="buttons">
                 <label class="btn btn-primary btn-brblue active">
-                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off" checked> Conversion
+                    <input id="conversion-btn"  type="radio" name="options" id="conversion" data-type="conversion" autocomplete="off" checked> Creation
                 </label>
                 <label id="migration-btn" class="btn btn-primary btn-brblue">
                     <input type="radio" name="options" id="migration" data-type="migration" autocomplete="off"> Migration
@@ -36,7 +36,7 @@
         <!-- CONVERSION CONTAINER -->
         <div id="conversion-container" class="container mt-4">
 
-            <h4 class="lead text-white text-center my-5">Convert your code into snippets formatted for your code editor!</h4>
+            <h4 class="lead text-white text-center my-5">Create code snippets formatted for your code editor!</h4>
             <hr>
             <form id="code-form" class="row">
 
